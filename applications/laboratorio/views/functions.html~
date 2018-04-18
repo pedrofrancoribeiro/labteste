@@ -1,0 +1,353 @@
+{{def menu_administrador():}}
+	<!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top navbar-labinstru">
+      <div class="container">
+        
+        <div class="navbar-header">
+
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <a href="{{=URL('home','menu')}}" class="navbar-brand">
+            <img class="img-menu"  src="{{=URL('static','imagens',args='labinstru.png')}}" alt="Brand" width="130">
+          </a>
+
+        </div>
+
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right menu-labinstru">
+
+            <li>
+              <a href="{{=URL('home','menu')}}">
+                Home
+              </a>
+            </li> <!-- aba home -->
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle dropdown-index" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                Medições<span class="caret indicativo-menu"></span>
+              </a>
+              <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                <li class="dropdown-submenu">
+                  <a href="#" tabindex="-1">
+                    Baixa 1
+                  </a>
+
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="{{=URL('baixa1','inserir')}}" tabindex="-1">
+                        <i class="icon icon-user glyphicon glyphicon-plus"></i> Inserir
+                      </a>
+                    </li>
+
+                    <li class="divider"></li>
+
+                    <li>
+                      <a href="{{=URL('baixa1','selecionar',args='exibir2')}}" tabindex="-1">
+                        <i class="icon icon-user glyphicon glyphicon-search"></i> Consultar
+                      </a>
+                    </li>
+
+                    <li class="divider"></li>
+
+                    <li>
+                      <a href="{{=URL('baixa1','selecionar',args='apagar')}}" tabindex="-1">
+                        <i class="icon icon-user glyphicon glyphicon-trash"></i> Apagar
+                      </a>
+                    </li>
+                    
+                    <li class="divider"></li>
+
+                    <li>
+                      <a href="{{=URL('baixa1','disponibilidade')}}" tabindex="-1">
+                        <i class="icon icon-user glyphicon glyphicon-thumbs-up"></i> Disponibilidade
+                      </a>
+                    </li>
+                  </ul>
+
+                </li> <!-- baixa 1-->
+
+                <li role="separator" class="divider"></li>
+
+                <li class="dropdown-submenu">
+                  <a href="#" tabindex="-1">
+                    Baixa 2
+                  </a>
+
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="{{=URL('baixa2','inserir')}}" tabindex="-1">
+                        <i class="icon icon-user glyphicon glyphicon-plus"></i> Inserir
+                      </a>
+                    </li>
+
+                    <li class="divider"></li>
+
+                    <li>
+                      <a href="{{=URL('baixa2','selecionar')}}" tabindex="-1">
+                        <i class="icon icon-user glyphicon glyphicon-search"></i> Consultar
+                      </a>
+                    </li>
+
+                    <li class="divider"></li>
+
+                    <li>
+                      <a href="{{=URL('baixa2','apagar')}}" tabindex="-1">
+                        <i class="icon icon-user glyphicon glyphicon-trash"></i> Apagar
+                      </a>
+                    </li>
+
+                    <li class="divider"></li>
+
+                    <li>
+                      <a href="{{=URL('baixa2','disponibilidade')}}" tabindex="-1">
+                        <i class="icon icon-user glyphicon glyphicon-thumbs-up"></i> Disponibilidade
+                      </a>
+                    </li>
+                    
+                  </ul>
+
+                </li> <!-- baixa 2-->
+
+                <li class="divider"></li>
+
+                <li>
+                  <a href="#" tabindex="-1">
+                    <i class="icon icon-user glyphicon glyphicon-calendar"></i> Boletim
+                  </a>
+                </li>
+
+              </ul>
+            </li> <!-- aba medições -->
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle dropdown-index" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                Administração <span class="caret indicativo-menu"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="{{=URL('home','cadastrar')}}">
+                    <i class="icon icon-user glyphicon glyphicon-user"></i> Cadastrar usuário
+                  </a>
+                </li>
+                <li role="separator" class="divider"></li>
+                <li>
+                  <a href="{{=URL('home','listar')}}">
+                    <i class="icon icon-user glyphicon glyphicon-list-alt"></i> Listar usuários
+                  </a>
+                </li>
+              </ul>
+            </li> <!-- aba administração -->
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle dropdown-index" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <div id="saudacao"></div> {{=session.auth.user.first_name}} <span class="caret indicativo-menu"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="{{=URL('home','change_password')}}">
+                    <i class="icon icon-user glyphicon glyphicon-lock"></i> Redefinir senha
+                  </a>
+                </li>
+                
+                <li>
+                  <a href="{{=URL('home','profile')}}">
+                    <i class="icon icon-user glyphicon glyphicon-pencil"></i> Alterar perfil
+                  </a>
+                </li>
+                <li role="separator" class="divider"></li>
+                <li>
+                  <a href="{{=URL('home/user','logout')}}">
+                    <i class="icon icon-user glyphicon glyphicon-off"></i> Logout
+                  </a>
+                </li> <!-- aba logout -->
+              </ul>
+            </li> <!-- configurações -->
+
+          </ul>
+        </div><!--/.nav-collapse -->
+
+      </div>
+    </nav>
+{{return}}
+
+{{def menu_usuario():}}
+	<!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top navbar-labinstru">
+      <div class="container">
+        
+        <div class="navbar-header">
+
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <a href="{{=URL('home','menu')}}" class="navbar-brand">
+            <img class="img-menu"  src="{{=URL('static','imagens',args='labinstru.png')}}" alt="Brand" width="130">
+          </a>
+        </div>
+
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right menu-labinstru">
+
+            <li>
+              <a href="{{=URL('home','menu')}}">
+                Home
+              </a>
+            </li> <!-- aba home -->
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle dropdown-index" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                Medições<span class="caret indicativo-menu"></span>
+              </a>
+              <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                <li class="dropdown-submenu">
+                  <a href="#" tabindex="-1">
+                    Baixa 1
+                  </a>
+
+                  <ul class="dropdown-menu">
+
+                    <li>
+                      <a href="{{=URL('baixa1','selecionar')}}" tabindex="-1">
+                        <i class="icon icon-user glyphicon glyphicon-search"></i> Consultar
+                      </a>
+                    </li>
+
+                    <li class="divider"></li>
+
+                    <li>
+                      <a href="{{=URL('baixa1','disponibilidade')}}" tabindex="-1">
+                        <i class="icon icon-user glyphicon glyphicon-thumbs-up"></i> Disponibilidade
+                      </a>
+                    </li>
+                  </ul>
+
+                </li> <!-- baixa 1-->
+
+                <li role="separator" class="divider"></li>
+
+                <li class="dropdown-submenu">
+                  <a href="#" tabindex="-1">
+                    Baixa 2
+                  </a>
+
+                  <ul class="dropdown-menu">
+
+                    <li>
+                      <a href="{{=URL('baixa2','selecionar')}}" tabindex="-1">
+                        <i class="icon icon-user glyphicon glyphicon-search"></i> Consultar
+                      </a>
+                    </li>
+
+                    <li class="divider"></li>
+
+                    <li>
+                      <a href="{{=URL('baixa2','disponibilidade')}}" tabindex="-1">
+                        <i class="icon icon-user glyphicon glyphicon-thumbs-up"></i> Disponibilidade
+                      </a>
+                    </li>
+                    
+                  </ul>
+
+                </li> <!-- baixa 2-->
+
+                <li class="divider"></li>
+
+                <li>
+                  <a href="#" tabindex="-1">
+                    <i class="icon icon-user glyphicon glyphicon-calendar"></i> Boletim
+                  </a>
+                </li>
+
+              </ul>
+            </li> <!-- aba medições -->
+
+            <li class="dropdown">
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle dropdown-index" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <div id="saudacao"></div> {{=session.auth.user.first_name}} <span class="caret indicativo-menu"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="{{=URL('home','change_password')}}">
+                    <i class="icon icon-user glyphicon glyphicon-lock"></i> Redefinir senha
+                  </a>
+                </li>
+                
+                <li>
+                  <a href="{{=URL('home','profile')}}">
+                    <i class="icon icon-user glyphicon glyphicon-pencil"></i> Alterar perfil
+                  </a>
+                </li>
+                <li role="separator" class="divider"></li>
+                <li>
+                  <a href="{{=URL('home/user','logout')}}">
+                    <i class="icon icon-user glyphicon glyphicon-off"></i> Logout
+                  </a>
+                </li> <!-- aba logout -->
+              </ul>
+            </li> <!-- configurações -->
+
+          </ul>
+        </div><!--/.nav-collapse -->
+
+      </div>
+    </nav>
+{{return}}
+
+{{def menu_login():}}
+	<!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top navbar-labinstru">
+      <div class="container">
+        
+        <div class="navbar-header">
+
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <a href="{{=URL('home','index')}}" class="navbar-brand">
+            <img class="img-menu" src="{{=URL('static','imagens',args='labinstru.png')}}" alt="Brand" width="130">
+          </a>
+
+        </div>
+
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right menu-labinstru">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle dropdown-index" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              	LOG IN <span class="caret indicativo-menu"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="{{=URL('home','login')}}">
+                    <i class="icon icon-user glyphicon glyphicon-off"></i> LOG IN
+                  </a>
+                </li>
+                <li role="separator" class="divider"></li>
+                <li>
+                  <a href="{{=URL('home','retrieve_password')}}">
+                    <i class="icon icon-user glyphicon glyphicon-lock"></i> Esqueci Minha Senha
+                  </a>
+                </li>
+
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+
+      </div>
+    </nav>
+{{return}}

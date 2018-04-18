@@ -1,0 +1,927 @@
+(dp1
+S'output'
+p2
+S"<type 'exceptions.NameError'> name 'mensagem' is not defined"
+p3
+sS'layer'
+p4
+S'/home/pedro/TCC2/APP_WEB/web2py_lab/applications/laboratorio/views/baixa2/inserir.html'
+p5
+sS'code'
+p6
+S'response.write(\'<!DOCTYPE html>\\n<html lang="pt-br">\\n\\n    <head>\\n        <meta charset="utf-8">\\n        <meta name="description" content="Aplica\\xc3\\xa7\\xc3\\xa3o Web LabInstru">\\n        <meta name="author" content="Pedro Ribeiro" >\\n        <link rel="icon" href="../../favicon.ico">\\n\\n        <title>LabInstru</title>\\n\\n        <!-- Bootstrap core CSS -->\\n        <link href="\', escape=False)\nresponse.write(URL(\'static\',\'css\',args=\'bootstrap.min.css\'))\nresponse.write(\'" rel="stylesheet">\\n\\n        <!-- Bootstrap core CSS -->\\n        <link href="\', escape=False)\nresponse.write(URL(\'static\',\'css\',args=\'bootstrap-theme.min.css\'))\nresponse.write(\'" rel="stylesheet">\\n\\n        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->\\n        <link rel="stylesheet" href="\', escape=False)\nresponse.write(URL(\'static\',\'css\',args=\'ie10-viewport-bug-workaround.css\'))\nresponse.write(\'">\\n\\n        <link href="\', escape=False)\nresponse.write(URL(\'static\',\'css\',args=\'calendar.css\'))\nresponse.write(\'" rel="stylesheet">\\n\\n        <link href="\', escape=False)\nresponse.write(URL(\'static\',\'css\',args=\'lista-usuarios.css\'))\nresponse.write(\'" rel="stylesheet">\\n\\n        <link href="\', escape=False)\nresponse.write(URL(\'static\',\'css\',args=\'usuario.css\'))\nresponse.write(\'" rel="stylesheet">\\n\\n        <!-- Custom styles for this template -->\\n        <link rel="stylesheet" href="\', escape=False)\nresponse.write(URL(\'static\',\'css\',args=\'offcanvas.css\'))\nresponse.write(\'">\\n\\n        <!-- Cont\\xc3\\xa9m alguns estilos gerais das p\\xc3\\xa1ginas -->\\n        <link rel="stylesheet" href="\', escape=False)\nresponse.write(URL(\'static\',\'css\',args=\'estilo.css\'))\nresponse.write(\'">\\n\\n        <script src="\', escape=False)\nresponse.write(URL(\'static\',\'js\', args=\'ie-emulation-modes-warning.js\'))\nresponse.write(\'"></script>\\n\\n        \', escape=False)\nresponse.files.insert(0,URL(\'static\',\'js/jquery.js\'))\nresponse.files.insert(1,URL(\'static\',\'css/calendar.css\'))\nresponse.files.insert(2,URL(\'static\',\'js/calendar.js\'))\nresponse.files.insert(3,URL(\'static\',\'js/web2py.js\'))\nresponse.include_meta()\nresponse.include_files()\nresponse.write(\'\\n\\n<script type="text/javascript"><!--\\n    // These variables are used by the web2py_ajax_init function in web2py_ajax.js (which is loaded below).\\n    var w2p_ajax_confirm_message = "\', escape=False)\nresponse.write(T(\'Are you sure you want to delete this object?\'))\nresponse.write(\'";\\n    var w2p_ajax_disable_with_message = "\', escape=False)\nresponse.write(T(\'Working...\'))\nresponse.write(\'";\\n    var w2p_ajax_date_format = "\', escape=False)\nresponse.write(T(\'%Y-%m-%d\'))\nresponse.write(\'";\\n    var w2p_ajax_datetime_format = "\', escape=False)\nresponse.write(T(\'%Y-%m-%d %H:%M:%S\'))\nresponse.write(\'";\\n    var ajax_error_500 = \\\'\', escape=False)\nresponse.write(T.M(\'An error occured, please [[reload %s]] the page\') % URL(args=request.args, vars=request.get_vars))\nresponse.write("\'\\n    //--></script>\\n", escape=False)\nresponse.write(\' <!-- this includes jquery.js, calendar.js/.css and web2py.js -->\\n        \', escape=False)\ndef menu_administrador():\n    response.write(\'\\n\\t<!-- Fixed navbar -->\\n    <nav class="navbar navbar-default navbar-fixed-top navbar-labinstru">\\n      <div class="container">\\n        \\n        <div class="navbar-header">\\n\\n          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">\\n            <span class="sr-only">Toggle navigation</span>\\n            <span class="icon-bar"></span>\\n            <span class="icon-bar"></span>\\n            <span class="icon-bar"></span>\\n          </button>\\n\\n          <a href="\', escape=False)\n    response.write(URL(\'home\',\'menu\'))\n    response.write(\'" class="navbar-brand">\\n            <img class="img-menu"  src="\', escape=False)\n    response.write(URL(\'static\',\'imagens\',args=\'labinstru.png\'))\n    response.write(\'" alt="Brand" width="130">\\n          </a>\\n\\n        </div>\\n\\n        <div id="navbar" class="navbar-collapse collapse">\\n          <ul class="nav navbar-nav navbar-right menu-labinstru">\\n\\n            <li>\\n              <a href="\', escape=False)\n    response.write(URL(\'home\',\'menu\'))\n    response.write(\'">\\n                Home\\n              </a>\\n            </li> <!-- aba home -->\\n\\n            <li class="dropdown">\\n              <a href="#" class="dropdown-toggle dropdown-index" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">\\n                Medi\\xc3\\xa7\\xc3\\xb5es<span class="caret indicativo-menu"></span>\\n              </a>\\n              <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">\\n                <li class="dropdown-submenu">\\n                  <a href="#" tabindex="-1">\\n                    Baixa 1\\n                  </a>\\n\\n                  <ul class="dropdown-menu">\\n                    <li>\\n                      <a href="\', escape=False)\n    response.write(URL(\'baixa1\',\'inserir\'))\n    response.write(\'" tabindex="-1">\\n                        <i class="icon icon-user glyphicon glyphicon-plus"></i> Inserir\\n                      </a>\\n                    </li>\\n\\n                    <li class="divider"></li>\\n\\n                    <li>\\n                      <a href="\', escape=False)\n    response.write(URL(\'baixa1\',\'selecionar\',args=\'exibir2\'))\n    response.write(\'" tabindex="-1">\\n                        <i class="icon icon-user glyphicon glyphicon-search"></i> Consultar\\n                      </a>\\n                    </li>\\n\\n                    <li class="divider"></li>\\n\\n                    <li>\\n                      <a href="\', escape=False)\n    response.write(URL(\'baixa1\',\'selecionar\',args=\'apagar\'))\n    response.write(\'" tabindex="-1">\\n                        <i class="icon icon-user glyphicon glyphicon-trash"></i> Apagar\\n                      </a>\\n                    </li>\\n                    \\n                    <li class="divider"></li>\\n\\n                    <li>\\n                      <a href="\', escape=False)\n    response.write(URL(\'baixa1\',\'disponibilidade\'))\n    response.write(\'" tabindex="-1">\\n                        <i class="icon icon-user glyphicon glyphicon-thumbs-up"></i> Disponibilidade\\n                      </a>\\n                    </li>\\n                  </ul>\\n\\n                </li> <!-- baixa 1-->\\n\\n                <li role="separator" class="divider"></li>\\n\\n                <li class="dropdown-submenu">\\n                  <a href="#" tabindex="-1">\\n                    Baixa 2\\n                  </a>\\n\\n                  <ul class="dropdown-menu">\\n                    <li>\\n                      <a href="\', escape=False)\n    response.write(URL(\'baixa2\',\'inserir\'))\n    response.write(\'" tabindex="-1">\\n                        <i class="icon icon-user glyphicon glyphicon-plus"></i> Inserir\\n                      </a>\\n                    </li>\\n\\n                    <li class="divider"></li>\\n\\n                    <li>\\n                      <a href="\', escape=False)\n    response.write(URL(\'baixa2\',\'selecionar\'))\n    response.write(\'" tabindex="-1">\\n                        <i class="icon icon-user glyphicon glyphicon-search"></i> Consultar\\n                      </a>\\n                    </li>\\n\\n                    <li class="divider"></li>\\n\\n                    <li>\\n                      <a href="\', escape=False)\n    response.write(URL(\'baixa2\',\'apagar\'))\n    response.write(\'" tabindex="-1">\\n                        <i class="icon icon-user glyphicon glyphicon-trash"></i> Apagar\\n                      </a>\\n                    </li>\\n\\n                    <li class="divider"></li>\\n\\n                    <li>\\n                      <a href="\', escape=False)\n    response.write(URL(\'baixa2\',\'disponibilidade\'))\n    response.write(\'" tabindex="-1">\\n                        <i class="icon icon-user glyphicon glyphicon-thumbs-up"></i> Disponibilidade\\n                      </a>\\n                    </li>\\n                    \\n                  </ul>\\n\\n                </li> <!-- baixa 2-->\\n\\n                <li class="divider"></li>\\n\\n                <li>\\n                  <a href="\', escape=False)\n    response.write(URL(\'boletim\',\'boletim\'))\n    response.write(\'" tabindex="-1">\\n                    <i class="icon icon-user glyphicon glyphicon-calendar"></i> Boletim\\n                  </a>\\n                </li>\\n\\n              </ul>\\n            </li> <!-- aba medi\\xc3\\xa7\\xc3\\xb5es -->\\n\\n            <li class="dropdown">\\n              <a href="#" class="dropdown-toggle dropdown-index" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">\\n                Administra\\xc3\\xa7\\xc3\\xa3o <span class="caret indicativo-menu"></span>\\n              </a>\\n              <ul class="dropdown-menu">\\n                <li>\\n                  <a href="\', escape=False)\n    response.write(URL(\'home\',\'cadastrar\'))\n    response.write(\'">\\n                    <i class="icon icon-user glyphicon glyphicon-user"></i> Cadastrar usu\\xc3\\xa1rio\\n                  </a>\\n                </li>\\n                <li role="separator" class="divider"></li>\\n                <li>\\n                  <a href="\', escape=False)\n    response.write(URL(\'home\',\'listar\'))\n    response.write(\'">\\n                    <i class="icon icon-user glyphicon glyphicon-list-alt"></i> Listar usu\\xc3\\xa1rios\\n                  </a>\\n                </li>\\n              </ul>\\n            </li> <!-- aba administra\\xc3\\xa7\\xc3\\xa3o -->\\n\\n            <li class="dropdown">\\n              <a href="#" class="dropdown-toggle dropdown-index" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">\\n                <div id="saudacao"></div> \', escape=False)\n    response.write(session.auth.user.first_name)\n    response.write(\' <span class="caret indicativo-menu"></span>\\n              </a>\\n              <ul class="dropdown-menu">\\n                <li>\\n                  <a href="\', escape=False)\n    response.write(URL(\'home\',\'change_password\'))\n    response.write(\'">\\n                    <i class="icon icon-user glyphicon glyphicon-lock"></i> Redefinir senha\\n                  </a>\\n                </li>\\n                \\n                <li>\\n                  <a href="\', escape=False)\n    response.write(URL(\'home\',\'profile\'))\n    response.write(\'">\\n                    <i class="icon icon-user glyphicon glyphicon-pencil"></i> Alterar perfil\\n                  </a>\\n                </li>\\n                <li role="separator" class="divider"></li>\\n                <li>\\n                  <a href="\', escape=False)\n    response.write(URL(\'home/user\',\'logout\'))\n    response.write(\'">\\n                    <i class="icon icon-user glyphicon glyphicon-off"></i> Logout\\n                  </a>\\n                </li> <!-- aba logout -->\\n              </ul>\\n            </li> <!-- configura\\xc3\\xa7\\xc3\\xb5es -->\\n\\n          </ul>\\n        </div><!--/.nav-collapse -->\\n\\n      </div>\\n    </nav>\\n\', escape=False)\n    return\nresponse.write(\'\\n\\n\', escape=False)\ndef menu_usuario():\n    response.write(\'\\n\\t<!-- Fixed navbar -->\\n    <nav class="navbar navbar-default navbar-fixed-top navbar-labinstru">\\n      <div class="container">\\n        \\n        <div class="navbar-header">\\n\\n          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">\\n            <span class="sr-only">Toggle navigation</span>\\n            <span class="icon-bar"></span>\\n            <span class="icon-bar"></span>\\n            <span class="icon-bar"></span>\\n          </button>\\n\\n          <a href="\', escape=False)\n    response.write(URL(\'home\',\'menu\'))\n    response.write(\'" class="navbar-brand">\\n            <img class="img-menu"  src="\', escape=False)\n    response.write(URL(\'static\',\'imagens\',args=\'labinstru.png\'))\n    response.write(\'" alt="Brand" width="130">\\n          </a>\\n        </div>\\n\\n        <div id="navbar" class="navbar-collapse collapse">\\n          <ul class="nav navbar-nav navbar-right menu-labinstru">\\n\\n            <li>\\n              <a href="\', escape=False)\n    response.write(URL(\'home\',\'menu\'))\n    response.write(\'">\\n                Home\\n              </a>\\n            </li> <!-- aba home -->\\n\\n            <li class="dropdown">\\n              <a href="#" class="dropdown-toggle dropdown-index" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">\\n                Medi\\xc3\\xa7\\xc3\\xb5es<span class="caret indicativo-menu"></span>\\n              </a>\\n              <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">\\n                <li class="dropdown-submenu">\\n                  <a href="#" tabindex="-1">\\n                    Baixa 1\\n                  </a>\\n\\n                  <ul class="dropdown-menu">\\n\\n                    <li>\\n                      <a href="\', escape=False)\n    response.write(URL(\'baixa1\',\'selecionar\'))\n    response.write(\'" tabindex="-1">\\n                        <i class="icon icon-user glyphicon glyphicon-search"></i> Consultar\\n                      </a>\\n                    </li>\\n\\n                    <li class="divider"></li>\\n\\n                    <li>\\n                      <a href="\', escape=False)\n    response.write(URL(\'baixa1\',\'disponibilidade\'))\n    response.write(\'" tabindex="-1">\\n                        <i class="icon icon-user glyphicon glyphicon-thumbs-up"></i> Disponibilidade\\n                      </a>\\n                    </li>\\n                  </ul>\\n\\n                </li> <!-- baixa 1-->\\n\\n                <li role="separator" class="divider"></li>\\n\\n                <li class="dropdown-submenu">\\n                  <a href="#" tabindex="-1">\\n                    Baixa 2\\n                  </a>\\n\\n                  <ul class="dropdown-menu">\\n\\n                    <li>\\n                      <a href="\', escape=False)\n    response.write(URL(\'baixa2\',\'selecionar\'))\n    response.write(\'" tabindex="-1">\\n                        <i class="icon icon-user glyphicon glyphicon-search"></i> Consultar\\n                      </a>\\n                    </li>\\n\\n                    <li class="divider"></li>\\n\\n                    <li>\\n                      <a href="\', escape=False)\n    response.write(URL(\'baixa2\',\'disponibilidade\'))\n    response.write(\'" tabindex="-1">\\n                        <i class="icon icon-user glyphicon glyphicon-thumbs-up"></i> Disponibilidade\\n                      </a>\\n                    </li>\\n                    \\n                  </ul>\\n\\n                </li> <!-- baixa 2-->\\n\\n                <li class="divider"></li>\\n\\n                <li>\\n                  <a href="#" tabindex="-1">\\n                    <i class="icon icon-user glyphicon glyphicon-calendar"></i> Boletim\\n                  </a>\\n                </li>\\n\\n              </ul>\\n            </li> <!-- aba medi\\xc3\\xa7\\xc3\\xb5es -->\\n\\n            <li class="dropdown">\\n\\n            <li class="dropdown">\\n              <a href="#" class="dropdown-toggle dropdown-index" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">\\n                <div id="saudacao"></div> \', escape=False)\n    response.write(session.auth.user.first_name)\n    response.write(\' <span class="caret indicativo-menu"></span>\\n              </a>\\n              <ul class="dropdown-menu">\\n                <li>\\n                  <a href="\', escape=False)\n    response.write(URL(\'home\',\'change_password\'))\n    response.write(\'">\\n                    <i class="icon icon-user glyphicon glyphicon-lock"></i> Redefinir senha\\n                  </a>\\n                </li>\\n                \\n                <li>\\n                  <a href="\', escape=False)\n    response.write(URL(\'home\',\'profile\'))\n    response.write(\'">\\n                    <i class="icon icon-user glyphicon glyphicon-pencil"></i> Alterar perfil\\n                  </a>\\n                </li>\\n                <li role="separator" class="divider"></li>\\n                <li>\\n                  <a href="\', escape=False)\n    response.write(URL(\'home/user\',\'logout\'))\n    response.write(\'">\\n                    <i class="icon icon-user glyphicon glyphicon-off"></i> Logout\\n                  </a>\\n                </li> <!-- aba logout -->\\n              </ul>\\n            </li> <!-- configura\\xc3\\xa7\\xc3\\xb5es -->\\n\\n          </ul>\\n        </div><!--/.nav-collapse -->\\n\\n      </div>\\n    </nav>\\n\', escape=False)\n    return\nresponse.write(\'\\n\\n\', escape=False)\ndef menu_login():\n    response.write(\'\\n\\t<!-- Fixed navbar -->\\n    <nav class="navbar navbar-default navbar-fixed-top navbar-labinstru">\\n      <div class="container">\\n        \\n        <div class="navbar-header">\\n\\n          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">\\n            <span class="sr-only">Toggle navigation</span>\\n            <span class="icon-bar"></span>\\n            <span class="icon-bar"></span>\\n            <span class="icon-bar"></span>\\n          </button>\\n\\n          <a href="\', escape=False)\n    response.write(URL(\'home\',\'index\'))\n    response.write(\'" class="navbar-brand">\\n            <img class="img-menu" src="\', escape=False)\n    response.write(URL(\'static\',\'imagens\',args=\'labinstru.png\'))\n    response.write(\'" alt="Brand" width="130">\\n          </a>\\n\\n        </div>\\n\\n        <div id="navbar" class="navbar-collapse collapse">\\n          <ul class="nav navbar-nav navbar-right menu-labinstru">\\n            <li class="dropdown">\\n              <a href="#" class="dropdown-toggle dropdown-index" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">\\n              \\tLOG IN <span class="caret indicativo-menu"></span>\\n              </a>\\n              <ul class="dropdown-menu">\\n                <li>\\n                  <a href="\', escape=False)\n    response.write(URL(\'home\',\'login\'))\n    response.write(\'">\\n                    <i class="icon icon-user glyphicon glyphicon-off"></i> LOG IN\\n                  </a>\\n                </li>\\n                <li role="separator" class="divider"></li>\\n                <li>\\n                  <a href="\', escape=False)\n    response.write(URL(\'home\',\'retrieve_password\'))\n    response.write(\'">\\n                    <i class="icon icon-user glyphicon glyphicon-lock"></i> Esqueci Minha Senha\\n                  </a>\\n                </li>\\n\\n              </ul>\\n            </li>\\n          </ul>\\n        </div><!--/.nav-collapse -->\\n\\n      </div>\\n    </nav>\\n\', escape=False)\n    return\nresponse.write(\'\\n\\n\', escape=False)\ndef calendario_labinstru(mes,ano):\n    response.write(\'\\n    \', escape=False)\n    import calendar\n    cal = calendar.Calendar()\n    semanas = cal.monthdayscalendar(ano,mes)\n    disp = lista_de_disponibilidade(ano,mes)\n    response.write(\'\\n    <h3 class="text-center">\', escape=False)\n    response.write(converte_mes_por_extenso(mes))\n    response.write(\' de \', escape=False)\n    response.write(ano)\n    response.write(\'</h3>\\n    <table>\\n        <tr>\\n            <th>Seg</th>\\n            <th>Ter</th>\\n            <th>Qua</th>\\n            <th>Qui</th>\\n            <th>Sex</th>\\n            <th>Sab</th>\\n            <th>Dom</th>\\n        </tr>\\n        \', escape=False)\n    for semana in semanas:\n        response.write(\'\\n            <tr>\\n                \', escape=False)\n        for dia in semana:\n            response.write(\'\\n                    \', escape=False)\n            if dia == 0:\n                response.write(\'\\n                        <td></td>\\n                    \', escape=False)\n            else:\n                response.write(\'\\n                        <td class=\', escape=False)\n                response.write(disp[dia][1])\n                response.write(\'>\', escape=False)\n                response.write(dia)\n                response.write(\'</td>\\n                    \', escape=False)\n                pass\n            response.write(\'\\n                \', escape=False)\n            pass\n        response.write(\'\\n            </tr>\\n        \', escape=False)\n        pass\n    response.write(\'\\n    </table>\\n\', escape=False)\n    return\nresponse.write(\'\\n\\n\', escape=False)\ndef boletim():\n    response.write(\'\\n    <div id="div" class="conteiner-boletim">\\n\\n        <div id="img-clima" class="\', escape=False)\n    response.write(regra_css)\n    response.write(\' cor-de-fundo">\\n            <!--<img class="" src="\', escape=False)\n    response.write(URL(\'static\',\'imagens/boletim\',args=\'38.png\'))\n    response.write(\'" alt="">-->\\n        </div><!-- #img-clima -->\\n\\n        <div id="data-boletim" class="cor-de-fundo">\\n            <hgroup>\\n                <h3 class=""><b>Manaus - AM</b></h3>\\n                <h2 class="">\', escape=False)\n    response.write(dia)\n    response.write(\'/\', escape=False)\n    response.write(mes)\n    response.write(\'/\', escape=False)\n    response.write(ano)\n    response.write(\'</h2>\\n            </hgroup>\\n        </div><!-- #data-boletim -->\\n\\n        <div id="valor-precipitacao" class="cor-de-fundo">\\n          <h2 class="text-center"><b>Precipita\\xc3\\xa7\\xc3\\xa3o:</b> <b id="val-prec">\', escape=False)\n    response.write(precipitacao)\n    response.write(\' mm</b></h2>\\n        </div><!-- #valor-precipitacao -->\\n\\n        <div id="temperaturas-boletim" class="cor-de-fundo">\\n          <header>\\n             <h2><b>Temperaturas</b></h2>\\n          </header>\\n\\n            <div id="temp-min" class="">\\n                <h4 class="text-left"><b>M\\xc3\\xadnima:</b> \', escape=False)\n    response.write(temp_min)\n    response.write(\' \\xc2\\xb0C</h4>\\n            </div><!-- #temp-min -->\\n\\n            <div id="temp-max" class="">\\n                <h4 class="text-right"><b>M\\xc3\\xa1xima:</b> \', escape=False)\n    response.write(temp_max)\n    response.write(\' \\xc2\\xb0C</h4>\\n            </div>\\n\\n        </div><!--#temperaturas-boletim -->\\n\\n        <div id="conteiner-informativo-vento" class="cor-de-fundo">\\n            <div id="informativo-vento">\\n                <header>\\n                    <h3><b>RAJADA</b></h3>\\n                </header>\\n                <section>\\n                    <p>\', escape=False)\n    response.write(wind_speed)\n    response.write(\' m/s</p>\\n                </section>\\n            </div>\\n        </div><!--#conteiner-informativo-vento -->\\n\\n        <div id="conteiner-indice-calor" class="cor-de-fundo">\\n            <div id="indice-calor">\\n                <header>\\n                    <h3><b>\\xc3\\x8dndice de Calor</b></h3>\\n                </header>\\n                <div id="valor-calor" class="">\\n                    <p>\', escape=False)\n    response.write(index_heat)\n    response.write(\' \\xc2\\xb0C</p>\\n                </div><!-- #valor-calor -->\\n                <div id="imagem-calor" class="">\\n                    <img src="\', escape=False)\n    response.write(URL(\'static\',\'imagens\',args=\'indice-calor-pequeno.png\'))\n    response.write(\'" alt="">\\n                </div><!-- #imagem-calor -->\\n            </div>\\n\\n        </div><!-- #conteiner-indice-calor -->\\n\\n        <div id="escala-beaufort" class="cor-de-fundo">\\n            <p><b>\', escape=False)\n    response.write(escala)\n    response.write(\'</b></p>\\n        </div><!-- #escala-beaufort -->\\n\\n        <div id="nivel-calor" class="cor-de-fundo">\\n            <p><b>\', escape=False)\n    response.write(alerta_ic)\n    response.write(\'</b></p>\\n        </div><!-- #nivel-calor -->\\n\\n        <div id="boletim-rodape" class="">\\n\\n        </div>\\n    </div><!-- #conteiner-boletim -->\\n\', escape=False)\n    return\nresponse.write(\'\\n\\n        \', escape=False)\nresponse.write(\'\\n    <link href="\', escape=False)\nresponse.write(URL(\'static\',\'css\',args=\'modal-inserir.css\'))\nresponse.write(\'" rel="stylesheet">\\n    <link href="\', escape=False)\nresponse.write(URL(\'static\',\'css\',args=\'animate.css\'))\nresponse.write(\'" rel="stylesheet">\\n\', escape=False)\nresponse.write(\'\\n    </head>\\n\\n    <body>\\n        \', escape=False)\nresponse.write(\'\\n            \', escape=False)\nif session.auth == None:\n    response.write(\'\\n                \', escape=False)\n    menu_login()\n    response.write(\'\\n            \', escape=False)\nelif is_administrador(session.auth.user.id):\n    response.write(\'\\n                \', escape=False)\n    menu_administrador()\n    response.write(\'\\n            \', escape=False)\nelse:\n    response.write(\'\\n                \', escape=False)\n    menu_usuario()\n    response.write(\'\\n            \', escape=False)\n    pass\nresponse.write(\'\\n        \', escape=False)\nresponse.write(\' <!-- fim do block navbar-index -->\\n\\n        \', escape=False)\nresponse.write(\'\\n\', escape=False)\nresponse.write(\' <!-- fim do block jumbotron -->\\n\\n\\n        <div class="container conteudo">\\n            \', escape=False)\nresponse.write(\'\\n    <div class="container">\\n\\n        <!-- <div class="progress" id="div-progress">\\n        <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 5%;" id="barra-progresso">\\n        </div>\\n        </div> -->\\n\\n        <form id="form-inserir-baixa1" class="col-md-6 col-md-offset-3 form-formulario" action="#" enctype="multipart/form-data" method="post">\\n            <img src="\', escape=False)\nresponse.write(URL(\'static\',\'imagens\',args=\'labinstru.png\'))\nresponse.write(\'" alt="icone-labinstru" class="img-responsive center-block">\\n\\n            <fieldset id="inserirBaixa1" class="col-md-12">\\n                <legend>Inserir Baixa 2</legend>\\n\\n                <p>\\n                  <div class="col-md-10">\\n                      <input class="form-control" type="file" id="formInserirBaixa1" name="arquivo" required>\\n                  </div>\\n                </p>\\n\\n            </fieldset>\\n\\n            <input id="btn-inserir" class="btn btn-success btn-aux" type="submit" name="ENVIAR" value="Enviar">\\n            <input class="btn btn-default btn-aux" type="reset" name="APAGAR" value="Limpar">\\n\\n            \', escape=False)\nif mensagem:\n    response.write(\'\\n\\n                <div id="msg-inserir-baixa1" class="\', escape=False)\n    response.write(mensagemClass)\n    response.write(\'">\\n                    \', escape=False)\n    response.write(mensagem)\n    response.write(\'\\n                    <button id="show-modal" class="close" data-dismiss="alert">&times;</button>\\n                </div>\\n\\n                <div class="modal tema-modal primary animated bounce" id="modal1">\\n                    <div class="modal-dialog">\\n                        <div class="modal-content">\\n\\n                            <div class="modal-header">\\n                                <h2 class="modal-title text-center">Informa\\xc3\\xa7\\xc3\\xb5es Importantes</h2>\\n                            </div>\\n\\n                                <div class="modal-body">\\n                                    <p>\\n                                        Total de linhas do arquivo: \', escape=False)\n    response.write(resultado[0])\n    response.write(\'\\n                                    </p>\\n                                    <p>\\n                                        Tuplas inseridas: \', escape=False)\n    response.write(resultado[1])\n    response.write(\'\\n                                    </p>\\n                                    <p>\\n                                        Tuplas n\\xc3\\xa3o inseridas: \', escape=False)\n    response.write(resultado[2])\n    response.write(\'\\n                                    </p>\\n                                    <p>\\n                                        Tuplas com menos de 26 campos: \', escape=False)\n    response.write(resultado[4])\n    response.write(\'\\n                                    </p>\\n                                    <p>\\n                                        Tuplas com mais de 26 campos: \', escape=False)\n    response.write(resultado[6])\n    response.write(\'\\n                                    </p>\\n\\n                                <div class="modal-footer">\\n                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>\\n                                </div>\\n                            </div> <!-- .modal-body -->\\n                        </div><!-- .modal-content -->\\n                    </div><!-- .modal-dialog -->\\n                </div> <!-- .modal.fade -->\\n\\n            \', escape=False)\n    pass\nresponse.write(\'\\n        </form>\\n    </div> <!-- /.container -->\\n\', escape=False)\nresponse.write(\' <!-- fim do block main -->\\n            <div class="push"></div>\\n        </div><!--/.container.conteudo-->\\n\\n        \', escape=False)\nresponse.write(\'\\n            <div class="container footer">\\n                <footer id="rodape" class="footer">\\n                    <hr>\\n                    <div class="col-sm-12 col-md-4 col-lg-4">\\n                        <p>\\n                            &copy; 2017 - por Pedro Ribeiro\\n                        </p>\\n                    </div>\\n\\n                    <div class="col-sm-12 col-md-4 col-lg-4">\\n                    <!-- aqui entra um texto caso necess\\xc3\\xa1rio -->\\n                    </div>\\n\\n                    <div class="col-sm-12 col-md-4 col-lg-4">\\n\\n                        <a href="http://www.uea.edu.br" target="_blank">\\n                            <img class="rede" src="\', escape=False)\nresponse.write(URL(\'static\',\'imagens\',args=\'twitter.png\'))\nresponse.write(\'">\\n                        </a>\\n\\n                        <a href="http://www.uol.com.br" target="_blank">\\n                            <img class="rede" src="\', escape=False)\nresponse.write(URL(\'static\',\'imagens\',args=\'facebook.png\'))\nresponse.write(\'">\\n                        </a>\\n\\n                        <a href="http://www.uol.com.br" target="_blank">\\n                            <img class="rede img-responsive img-thumbnail" width="80" src="\', escape=False)\nresponse.write(URL(\'static\',\'imagens\',args=\'labinstru-peq.png\'))\nresponse.write(\'">\\n                        </a>\\n\\n                        <a href="http://www.uol.com.br" target="_blank">\\n                            <img class="rede img-responsive img-thumbnail" width="90" src="\', escape=False)\nresponse.write(URL(\'static\',\'imagens\',args=\'logo-uea.png\'))\nresponse.write(\'">\\n                        </a>\\n                    </div>\\n                </footer>\\n            </div>\\n        \', escape=False)\nresponse.write(\' <!-- fim do block footer -->\\n\\n        <!-- Bootstrap core JavaScript -->\\n        <script src="\', escape=False)\nresponse.write(URL(\'static\',\'js\',args=\'jquery.min.js\'))\nresponse.write(\'"></script>\\n        <script src="\', escape=False)\nresponse.write(URL(\'static\',\'js\',args=\'bootstrap.min.js\'))\nresponse.write(\'"></script>\\n\\n        <!-- meus scripts -->\\n        <script src="\', escape=False)\nresponse.write(URL(\'static\',\'js\',args=\'scripts.js\'))\nresponse.write(\'"></script>\\n        <script src="\', escape=False)\nresponse.write(URL(\'static\',\'js\',args=\'inserir.js\'))\nresponse.write(\'"></script>\\n\\n        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->\\n        <script src="\', escape=False)\nresponse.write(URL(\'static\',\'js\',args=\'ie10-viewport-bug-workaround.js\'))\nresponse.write(\'"></script>\\n        <script src="\', escape=False)\nresponse.write(URL(\'static\',\'js\',args=\'offcanvas.js\'))\nresponse.write(\'"></script>\\n    </body>\\n</html>\', escape=False)'
+p7
+sS'snapshot'
+p8
+(dp9
+S'exception'
+p10
+(dp11
+S'__hash__'
+p12
+S"<method-wrapper '__hash__' of exceptions.NameError object>"
+p13
+sS'__setattr__'
+p14
+S"<method-wrapper '__setattr__' of exceptions.NameError object>"
+p15
+sS'__reduce_ex__'
+p16
+S'<built-in method __reduce_ex__ of exceptions.NameError object>'
+p17
+sS'__getslice__'
+p18
+S"<method-wrapper '__getslice__' of exceptions.NameError object>"
+p19
+sS'__getitem__'
+p20
+S"<method-wrapper '__getitem__' of exceptions.NameError object>"
+p21
+sS'__setstate__'
+p22
+S'<built-in method __setstate__ of exceptions.NameError object>'
+p23
+sS'args'
+p24
+S'("name \'mensagem\' is not defined",)'
+p25
+sS'__reduce__'
+p26
+S'<built-in method __reduce__ of exceptions.NameError object>'
+p27
+sS'__str__'
+p28
+S"<method-wrapper '__str__' of exceptions.NameError object>"
+p29
+sS'__format__'
+p30
+S'<built-in method __format__ of exceptions.NameError object>'
+p31
+sS'__getattribute__'
+p32
+S"<method-wrapper '__getattribute__' of exceptions.NameError object>"
+p33
+sS'__class__'
+p34
+S"<type 'exceptions.NameError'>"
+p35
+sS'__unicode__'
+p36
+S'<built-in method __unicode__ of exceptions.NameError object>'
+p37
+sS'__delattr__'
+p38
+S"<method-wrapper '__delattr__' of exceptions.NameError object>"
+p39
+sS'__subclasshook__'
+p40
+S'<built-in method __subclasshook__ of type object>'
+p41
+sS'__repr__'
+p42
+S"<method-wrapper '__repr__' of exceptions.NameError object>"
+p43
+sS'__dict__'
+p44
+S'{}'
+p45
+sS'__sizeof__'
+p46
+S'<built-in method __sizeof__ of exceptions.NameError object>'
+p47
+sS'__doc__'
+p48
+S"'Name not found globally.'"
+p49
+sS'__init__'
+p50
+S"<method-wrapper '__init__' of exceptions.NameError object>"
+p51
+sS'__new__'
+p52
+S'<built-in method __new__ of type object>'
+p53
+ssS'evalue'
+p54
+S"name 'mensagem' is not defined"
+p55
+sS'request'
+p56
+cgluon.html
+XML_unpickle
+p57
+(S's\x98P\x00\x00<div><table><tr><td style="font-weight:bold;vertical-align:top;">ajax</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">application</td><td style="vertical-align:top;">:</td><td><div>laboratorio</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">args</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cid</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">client</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">controller</td><td style="vertical-align:top;">:</td><td><div>baixa2</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cookies</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">session_id_laboratorio</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-f96acbaa-ec44-464a-85ca-7e8d6b2dcc3a<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">env</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">HTTP_ACCEPT</td><td style="vertical-align:top;">:</td><td><div>text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_ACCEPT_ENCODING</td><td style="vertical-align:top;">:</td><td><div>gzip, deflate</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_ACCEPT_LANGUAGE</td><td style="vertical-align:top;">:</td><td><div>pt-BR,pt;q=0.8,en-US;q=0.5,en;q=0.3</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_CACHE_CONTROL</td><td style="vertical-align:top;">:</td><td><div>max-age=0</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_CONNECTION</td><td style="vertical-align:top;">:</td><td><div>keep-alive</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_COOKIE</td><td style="vertical-align:top;">:</td><td><div>session_id_laboratorio=127.0.0.1-f96acbaa-ec44-464a-85ca-7e8d6b2dcc3a</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_HOST</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1:8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_REFERER</td><td style="vertical-align:top;">:</td><td><div>http://127.0.0.1:8000/menu</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_UPGRADE_INSECURE_REQUESTS</td><td style="vertical-align:top;">:</td><td><div>1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_USER_AGENT</td><td style="vertical-align:top;">:</td><td><div>Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:56.0) Gecko/20100101 Firefox/56.0</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">PATH_INFO</td><td style="vertical-align:top;">:</td><td><div>/baixa2/inserir</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">QUERY_STRING</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">REMOTE_ADDR</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">REMOTE_PORT</td><td style="vertical-align:top;">:</td><td><div>50792</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">REQUEST_METHOD</td><td style="vertical-align:top;">:</td><td><div>GET</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SCRIPT_NAME</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_NAME</td><td style="vertical-align:top;">:</td><td><div>ribeiro</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_PORT</td><td style="vertical-align:top;">:</td><td><div>8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_PROTOCOL</td><td style="vertical-align:top;">:</td><td><div>HTTP/1.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_SOFTWARE</td><td style="vertical-align:top;">:</td><td><div>Rocket 1.2.6</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">app_folders</td><td style="vertical-align:top;">:</td><td><div>set([&#x27;/home/pedro/TCC2/APP_WEB/web2py_lab/applications/laboratorio/&#x27;])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">applications_parent</td><td style="vertical-align:top;">:</td><td><div>/home/pedro/TCC2/APP_WEB/web2py_lab</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cmd_args</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cmd_options</td><td style="vertical-align:top;">:</td><td><div>&lt;Values at 0x7f1270672680: {&#x27;verbose&#x27;: False, &#x27;ip&#x27;: &#x27;127.0.0.1&#x27;, &#x27;debuglevel&#x27;: 30, &#x27;with_scheduler&#x27;: False, &#x27;shutdown_timeout&#x27;: 5, &#x27;taskbar&#x27;: False, &#x27;with_coverage&#x27;: False, &#x27;pid_filename&#x27;: &#x27;httpserver.pid&#x27;, &#x27;maxthreads&#x27;: None, &#x27;softcron&#x27;: False, &#x27;server_name&#x27;: &#x27;ribeiro&#x27;, &#x27;bpython&#x27;: False, &#x27;nogui&#x27;: False, &#x27;port&#x27;: 8000, &#x27;print_errors&#x27;: False, &#x27;extcron&#x27;: False, &#x27;runcron&#x27;: False, &#x27;run_system_tests&#x27;: False, &#x27;test&#x27;: None, &#x27;folder&#x27;: &#x27;/home/pedro/TCC2/APP_WEB/web2py_lab&#x27;, &#x27;config&#x27;: &#x27;&#x27;, &#x27;minthreads&#x27;: None, &#x27;shell&#x27;: None, &#x27;run&#x27;: &#x27;&#x27;, &#x27;log_filename&#x27;: &#x27;httpserver.log&#x27;, &#x27;profiler_dir&#x27;: None, &#x27;args&#x27;: [&#x27;&#x27;], &#x27;socket_timeout&#x27;: 5, &#x27;ssl_ca_certificate&#x27;: None, &#x27;scheduler&#x27;: None, &#x27;interfaces&#x27;: None, &#x27;ssl_private_key&#x27;: &#x27;&#x27;, &#x27;gae&#x27;: None, &#x27;password&#x27;: &#x27;******&#x27;, &#x27;request_queue_size&#x27;: 5, &#x27;ssl_certificate&#x27;: &#x27;&#x27;, &#x27;cronjob&#x27;: False, &#x27;numthreads&#x27;: None, &#x27;quiet&#x27;: False, &#x27;import_models&#x27;: False, &#x27;timeout&#x27;: 10, &#x27;plain&#x27;: False, &#x27;nobanner&#x27;: False}&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">db_sessions</td><td style="vertical-align:top;">:</td><td><div>set([])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">debugging</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">gluon_parent</td><td style="vertical-align:top;">:</td><td><div>/home/pedro/TCC2/APP_WEB/web2py_lab</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_accept</td><td style="vertical-align:top;">:</td><td><div>text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_accept_encoding</td><td style="vertical-align:top;">:</td><td><div>gzip, deflate</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_accept_language</td><td style="vertical-align:top;">:</td><td><div>pt-BR,pt;q=0.8,en-US;q=0.5,en;q=0.3</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_cache_control</td><td style="vertical-align:top;">:</td><td><div>max-age=0</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_connection</td><td style="vertical-align:top;">:</td><td><div>keep-alive</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_cookie</td><td style="vertical-align:top;">:</td><td><div>session_id_laboratorio=127.0.0.1-f96acbaa-ec44-464a-85ca-7e8d6b2dcc3a</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_host</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1:8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_referer</td><td style="vertical-align:top;">:</td><td><div>http://127.0.0.1:8000/menu</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_upgrade_insecure_requests</td><td style="vertical-align:top;">:</td><td><div>1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_user_agent</td><td style="vertical-align:top;">:</td><td><div>Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:56.0) Gecko/20100101 Firefox/56.0</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_jython</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_pypy</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_source</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">local_hosts</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>127.0.1.1</div></td></tr><tr><td><div>::1</div></td></tr><tr><td><div>ribeiro</div></td></tr><tr><td><div>::ffff:127.0.0.1</div></td></tr><tr><td><div>127.0.0.1</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path_info</td><td style="vertical-align:top;">:</td><td><div>/baixa2/inserir</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">query_string</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">remote_addr</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">remote_port</td><td style="vertical-align:top;">:</td><td><div>50792</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">request_method</td><td style="vertical-align:top;">:</td><td><div>GET</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">request_uri</td><td style="vertical-align:top;">:</td><td><div>/laboratorio/baixa2/inserir</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">script_name</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_name</td><td style="vertical-align:top;">:</td><td><div>ribeiro</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_port</td><td style="vertical-align:top;">:</td><td><div>8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_protocol</td><td style="vertical-align:top;">:</td><td><div>HTTP/1.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_software</td><td style="vertical-align:top;">:</td><td><div>Rocket 1.2.6</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">web2py_original_uri</td><td style="vertical-align:top;">:</td><td><div>/baixa2/inserir</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">web2py_path</td><td style="vertical-align:top;">:</td><td><div>/home/pedro/TCC2/APP_WEB/web2py_lab</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">web2py_version</td><td style="vertical-align:top;">:</td><td><div>2.14.6-stable+timestamp.2016.05.10.00.21.47</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.errors</td><td style="vertical-align:top;">:</td><td><div>&lt;open file &#x27;&lt;stderr&gt;&#x27;, mode &#x27;w&#x27; at 0x7f1277bc31e0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.file_wrapper</td><td style="vertical-align:top;">:</td><td><div>&lt;class wsgiref.util.FileWrapper at 0x7f127070bae0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.input</td><td style="vertical-align:top;">:</td><td><div>&lt;socket._fileobject object at 0x7f126c3ad750&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.multiprocess</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.multithread</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.run_once</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.url_scheme</td><td style="vertical-align:top;">:</td><td><div>http</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.version</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>1</div></td></tr><tr><td><div>0</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_errors</td><td style="vertical-align:top;">:</td><td><div>&lt;open file &#x27;&lt;stderr&gt;&#x27;, mode &#x27;w&#x27; at 0x7f1277bc31e0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_file_wrapper</td><td style="vertical-align:top;">:</td><td><div>&lt;class wsgiref.util.FileWrapper at 0x7f127070bae0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_input</td><td style="vertical-align:top;">:</td><td><div>&lt;socket._fileobject object at 0x7f126c3ad750&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_multiprocess</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_multithread</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_run_once</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_url_scheme</td><td style="vertical-align:top;">:</td><td><div>http</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_version</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>1</div></td></tr><tr><td><div>0</div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">extension</td><td style="vertical-align:top;">:</td><td><div>html</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">folder</td><td style="vertical-align:top;">:</td><td><div>/home/pedro/TCC2/APP_WEB/web2py_lab/applications/laboratorio/</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">function</td><td style="vertical-align:top;">:</td><td><div>inserir</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">global_settings</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">app_folders</td><td style="vertical-align:top;">:</td><td><div>set([&#x27;/home/pedro/TCC2/APP_WEB/web2py_lab/applications/laboratorio/&#x27;])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">applications_parent</td><td style="vertical-align:top;">:</td><td><div>/home/pedro/TCC2/APP_WEB/web2py_lab</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cmd_args</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cmd_options</td><td style="vertical-align:top;">:</td><td><div>&lt;Values at 0x7f1270672680: {&#x27;verbose&#x27;: False, &#x27;ip&#x27;: &#x27;127.0.0.1&#x27;, &#x27;debuglevel&#x27;: 30, &#x27;with_scheduler&#x27;: False, &#x27;shutdown_timeout&#x27;: 5, &#x27;taskbar&#x27;: False, &#x27;with_coverage&#x27;: False, &#x27;pid_filename&#x27;: &#x27;httpserver.pid&#x27;, &#x27;maxthreads&#x27;: None, &#x27;softcron&#x27;: False, &#x27;server_name&#x27;: &#x27;ribeiro&#x27;, &#x27;bpython&#x27;: False, &#x27;nogui&#x27;: False, &#x27;port&#x27;: 8000, &#x27;print_errors&#x27;: False, &#x27;extcron&#x27;: False, &#x27;runcron&#x27;: False, &#x27;run_system_tests&#x27;: False, &#x27;test&#x27;: None, &#x27;folder&#x27;: &#x27;/home/pedro/TCC2/APP_WEB/web2py_lab&#x27;, &#x27;config&#x27;: &#x27;&#x27;, &#x27;minthreads&#x27;: None, &#x27;shell&#x27;: None, &#x27;run&#x27;: &#x27;&#x27;, &#x27;log_filename&#x27;: &#x27;httpserver.log&#x27;, &#x27;profiler_dir&#x27;: None, &#x27;args&#x27;: [&#x27;&#x27;], &#x27;socket_timeout&#x27;: 5, &#x27;ssl_ca_certificate&#x27;: None, &#x27;scheduler&#x27;: None, &#x27;interfaces&#x27;: None, &#x27;ssl_private_key&#x27;: &#x27;&#x27;, &#x27;gae&#x27;: None, &#x27;password&#x27;: &#x27;******&#x27;, &#x27;request_queue_size&#x27;: 5, &#x27;ssl_certificate&#x27;: &#x27;&#x27;, &#x27;cronjob&#x27;: False, &#x27;numthreads&#x27;: None, &#x27;quiet&#x27;: False, &#x27;import_models&#x27;: False, &#x27;timeout&#x27;: 10, &#x27;plain&#x27;: False, &#x27;nobanner&#x27;: False}&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">db_sessions</td><td style="vertical-align:top;">:</td><td><div>set([])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">debugging</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">gluon_parent</td><td style="vertical-align:top;">:</td><td><div>/home/pedro/TCC2/APP_WEB/web2py_lab</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_jython</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_pypy</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_source</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">local_hosts</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>127.0.1.1</div></td></tr><tr><td><div>::1</div></td></tr><tr><td><div>ribeiro</div></td></tr><tr><td><div>::ffff:127.0.0.1</div></td></tr><tr><td><div>127.0.0.1</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">web2py_version</td><td style="vertical-align:top;">:</td><td><div>2.14.6-stable+timestamp.2016.05.10.00.21.47</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_https</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_local</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_restful</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_scheduler</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_shell</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">now</td><td style="vertical-align:top;">:</td><td><div>datetime.datetime(2017, 11, 1, 10, 37, 2, 19831)</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">url</td><td style="vertical-align:top;">:</td><td><div>/baixa2/inserir</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">utcnow</td><td style="vertical-align:top;">:</td><td><div>datetime.datetime(2017, 11, 1, 14, 37, 2, 19900)</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi</td><td style="vertical-align:top;">:</td><td><div>&lt;gluon.main.LazyWSGI object at 0x7f126c3dbf10&gt;</div></td></tr></table></div>'
+tRp58
+sS'frames'
+p59
+(lp60
+(dp61
+S'file'
+p62
+S'/home/pedro/TCC2/APP_WEB/web2py_lab/gluon/restricted.py'
+p63
+sS'dump'
+p64
+(dp65
+S'environment'
+p66
+S"{'A': <class 'gluon.html.A'>, 'ANY_OF': <class 'gluon.validators.ANY_OF'>, 'ASSIGNJS': <function ASSIGNJS>, 'Auth': <class 'gluon.tools.Auth'>, 'B': <class 'gluon.html.B'>, 'BEAUTIFY': <class 'gluon.html.BEAUTIFY'>, 'BODY': <class 'gluon.html.BODY'>, 'BR': <class 'gluon.html.BR'>, 'BUTTON': <class 'gluon.html.BUTTON'>, 'CAT': <class 'gluon.html.CAT'>, ...}"
+p67
+sS'ccode'
+p68
+S'<code object <module> at 0x7f126c2dff30, file "/...s/laboratorio/views/baixa2/inserir.html", line 1>'
+p69
+ssS'lnum'
+p70
+I227
+sS'lines'
+p71
+(dp72
+I224
+S'            ccode = code'
+p73
+sI225
+S'        else:'
+p74
+sI226
+S'            ccode = compile2(code, layer)'
+p75
+sI227
+S'        exec ccode in environment'
+p76
+sI228
+S'    except HTTP:'
+p77
+sI229
+S'        raise'
+p78
+sI230
+S'    except RestrictedError:'
+p79
+sI231
+S'        # do not encapsulate (obfuscate) the original RestrictedError'
+p80
+sI222
+S'    try:'
+p81
+sI223
+S'        if isinstance(code, types.CodeType):'
+p82
+ssS'call'
+p83
+S'(code=\'response.write(\\\'<!DOCTYPE html>\\\\n<html lang="pt-..."></script>\\\\n    </body>\\\\n</html>\\\', escape=False)\', environment={\'A\': <class \'gluon.html.A\'>, \'ANY_OF\': <class \'gluon.validators.ANY_OF\'>, \'ASSIGNJS\': <function ASSIGNJS>, \'Auth\': <class \'gluon.tools.Auth\'>, \'B\': <class \'gluon.html.B\'>, \'BEAUTIFY\': <class \'gluon.html.BEAUTIFY\'>, \'BODY\': <class \'gluon.html.BODY\'>, \'BR\': <class \'gluon.html.BR\'>, \'BUTTON\': <class \'gluon.html.BUTTON\'>, \'CAT\': <class \'gluon.html.CAT\'>, ...}, layer=\'/home/pedro/TCC2/APP_WEB/web2py_lab/applications/laboratorio/views/baixa2/inserir.html\')'
+p84
+sS'func'
+p85
+S'restricted'
+p86
+sa(dp87
+g62
+S'/home/pedro/TCC2/APP_WEB/web2py_lab/applications/laboratorio/views/baixa2/inserir.html'
+p88
+sg64
+(dp89
+sg70
+I204
+sg71
+(dp90
+I195
+S"    response.write('\\n            ', escape=False)"
+p91
+sI196
+S'    pass'
+p92
+sI197
+S"response.write('\\n        ', escape=False)"
+p93
+sI198
+S"response.write(' <!-- fim do block navbar-index -->\\n\\n        ', escape=False)"
+p94
+sI199
+S"response.write('\\n', escape=False)"
+p95
+sI200
+S'response.write(\' <!-- fim do block jumbotron -->\\n\\n\\n        <div class="container conteudo">\\n            \', escape=False)'
+p96
+sI201
+S'response.write(\'\\n    <div class="container">\\n\\n        <!-- <div class="progress" id="div-progress">\\n        <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 5%;" id="barra-progresso">\\n        </div>\\n        </div> -->\\n\\n        <form id="form-inserir-baixa1" class="col-md-6 col-md-offset-3 form-formulario" action="#" enctype="multipart/form-data" method="post">\\n            <img src="\', escape=False)'
+p97
+sI202
+S"response.write(URL('static','imagens',args='labinstru.png'))"
+p98
+sI203
+S'response.write(\'" alt="icone-labinstru" class="img-responsive center-block">\\n\\n            <fieldset id="inserirBaixa1" class="col-md-12">\\n                <legend>Inserir Baixa 2</legend>\\n\\n                <p>\\n                  <div class="col-md-10">\\n                      <input class="form-control" type="file" id="formInserirBaixa1" name="arquivo" required>\\n                  </div>\\n                </p>\\n\\n            </fieldset>\\n\\n            <input id="btn-inserir" class="btn btn-success btn-aux" type="submit" name="ENVIAR" value="Enviar">\\n            <input class="btn btn-default btn-aux" type="reset" name="APAGAR" value="Limpar">\\n\\n            \', escape=False)'
+p99
+sI204
+S'if mensagem:'
+p100
+sI205
+S'    response.write(\'\\n\\n                <div id="msg-inserir-baixa1" class="\', escape=False)'
+p101
+sI206
+S'    response.write(mensagemClass)'
+p102
+sI207
+S'    response.write(\'">\\n                    \', escape=False)'
+p103
+sI208
+S'    response.write(mensagem)'
+p104
+sI209
+S'    response.write(\'\\n                    <button id="show-modal" class="close" data-dismiss="alert">&times;</button>\\n                </div>\\n\\n                <div class="modal tema-modal primary animated bounce" id="modal1">\\n                    <div class="modal-dialog">\\n                        <div class="modal-content">\\n\\n                            <div class="modal-header">\\n                                <h2 class="modal-title text-center">Informa\\xc3\\xa7\\xc3\\xb5es Importantes</h2>\\n                            </div>\\n\\n                                <div class="modal-body">\\n                                    <p>\\n                                        Total de linhas do arquivo: \', escape=False)'
+p105
+sI210
+S'    response.write(resultado[0])'
+p106
+sI211
+S"    response.write('\\n                                    </p>\\n                                    <p>\\n                                        Tuplas inseridas: ', escape=False)"
+p107
+sI212
+S'    response.write(resultado[1])'
+p108
+sI213
+S"    response.write('\\n                                    </p>\\n                                    <p>\\n                                        Tuplas n\\xc3\\xa3o inseridas: ', escape=False)"
+p109
+sI214
+S'    response.write(resultado[2])'
+p110
+ssg83
+S'()'
+p111
+sg85
+S'<module>'
+p112
+sasS'pyver'
+p113
+S'Python 2.7.13: /usr/bin/python (prefix: /usr)'
+p114
+sS'session'
+p115
+g57
+(S's\xe4\x07\x00\x00<div><table><tr><td style="font-weight:bold;vertical-align:top;">auth</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">expiration</td><td style="vertical-align:top;">:</td><td><div>3600</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">hmac_key</td><td style="vertical-align:top;">:</td><td><div>68708787-bb21-4021-a1a1-1ad9d716ccdc</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">last_visit</td><td style="vertical-align:top;">:</td><td><div>datetime.datetime(2017, 11, 1, 10, 37, 2, 19831)</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">user</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">email</td><td style="vertical-align:top;">:</td><td><div>pedroribeiro212@gmail.com</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">first_name</td><td style="vertical-align:top;">:</td><td><div>Pedro</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">id</td><td style="vertical-align:top;">:</td><td><div>1L</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">last_name</td><td style="vertical-align:top;">:</td><td><div>Augusto</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">registration_id</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">registration_key</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">reset_password_key</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">user_groups</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">1</td><td style="vertical-align:top;">:</td><td><div>Admin</div></td></tr></table></div></td></tr></table></div></td></tr></table></div>'
+tRp116
+sS'etype'
+p117
+S"<type 'exceptions.NameError'>"
+p118
+sS'date'
+p119
+S'Wed Nov  1 10:37:02 2017'
+p120
+sS'response'
+p121
+g57
+(S's\x92\x18\x00\x00<div><table><tr><td style="font-weight:bold;vertical-align:top;">body</td><td style="vertical-align:top;">:</td><td><div>&lt;cStringIO.StringO object at 0x7f126c3f7030&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cookies</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">session_id_laboratorio</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-f96acbaa-ec44-464a-85ca-7e8d6b2dcc3a<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div>/</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">delimiters</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>{{</div></td></tr><tr><td><div>}}</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">files</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>/laboratorio/static/js/jquery.js</div></td></tr><tr><td><div>/laboratorio/static/css/calendar.css</div></td></tr><tr><td><div>/laboratorio/static/js/calendar.js</div></td></tr><tr><td><div>/laboratorio/static/js/web2py.js</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">flash</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">form_label_separator</td><td style="vertical-align:top;">:</td><td><div>: </div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">formstyle</td><td style="vertical-align:top;">:</td><td><div>table3cols</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">generic_patterns</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>*</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">headers</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">X-Powered-By</td><td style="vertical-align:top;">:</td><td><div>web2py</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">menu</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">meta</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">models_to_run</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>^\\w+\\.py$</div></td></tr><tr><td><div>^baixa2/\\w+\\.py$</div></td></tr><tr><td><div>^baixa2/inserir/\\w+\\.py$</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">postprocessing</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_client</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_cookie_compression_level</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_cookie_expires</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_data_name</td><td style="vertical-align:top;">:</td><td><div>session_data_laboratorio</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_file</td><td style="vertical-align:top;">:</td><td><div>&lt;open file &#x27;/home/pedro/TCC2/APP_WEB/web2py_lab/applications/laboratorio/sessions/0a4/1eb/127.0.0.1-f96acbaa-ec44-464a-85ca-7e8d6b2dcc3a&#x27;, mode &#x27;rb+&#x27; at 0x7f1275c15b70&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_filename</td><td style="vertical-align:top;">:</td><td><div>/home/pedro/TCC2/APP_WEB/web2py_lab/applications/laboratorio/sessions/127.0.0.1-f96acbaa-ec44-464a-85ca-7e8d6b2dcc3a</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_hash</td><td style="vertical-align:top;">:</td><td><div>e4de95d8874dadc512de5f758e370c0e</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-f96acbaa-ec44-464a-85ca-7e8d6b2dcc3a</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_name</td><td style="vertical-align:top;">:</td><td><div>session_id_laboratorio</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_locked</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_masterapp</td><td style="vertical-align:top;">:</td><td><div>laboratorio</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_new</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_storage_type</td><td style="vertical-align:top;">:</td><td><div>file</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">status</td><td style="vertical-align:top;">:</td><td><div>200</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">view</td><td style="vertical-align:top;">:</td><td><div>baixa2/inserir.html</div></td></tr></table></div>'
+tRp122
+sS'locals'
+p123
+(dp124
+S'formata_dados'
+p125
+S'<function formata_dados>'
+p126
+sS'Service'
+p127
+S"<class 'gluon.tools.Service'>"
+p128
+sS'OBJECT'
+p129
+S"<class 'gluon.html.OBJECT'>"
+p130
+sS'SQLDB'
+p131
+S"<class 'pydal.base.DAL'>"
+p132
+sg115
+S"<Storage {'auth': <Storage {'hmac_key': '6870878... 11, 1, 10, 37, 2, 19831), 'expiration': 3600}>}>"
+p133
+sS'LINK'
+p134
+S"<class 'gluon.html.LINK'>"
+p135
+sS'BR'
+p136
+S"<class 'gluon.html.BR'>"
+p137
+sS'local_import'
+p138
+S'<function <lambda>>'
+p139
+sS'OPTGROUP'
+p140
+S"<class 'gluon.html.OPTGROUP'>"
+p141
+sS'__package__'
+p142
+S'None'
+p143
+sS'get_min_max_years'
+p144
+S'<function get_min_max_years>'
+p145
+sS'IS_INT_IN_RANGE'
+p146
+S"<class 'gluon.validators.IS_INT_IN_RANGE'>"
+p147
+sS'is_dat'
+p148
+S'<function is_dat>'
+p149
+sS'IS_LOWER'
+p150
+S"<class 'gluon.validators.IS_LOWER'>"
+p151
+sS'IS_STRONG'
+p152
+S"<class 'gluon.validators.IS_STRONG'>"
+p153
+sS'cache'
+p154
+S'<gluon.cache.Cache object>'
+p155
+sS'IS_IN_DB'
+p156
+S"<class 'gluon.validators.IS_IN_DB'>"
+p157
+sS'TAG'
+p158
+S'<gluon.html.__TAG__ object>'
+p159
+sS'escala_beaufort'
+p160
+S'<function escala_beaufort>'
+p161
+sS'SQLField'
+p162
+S"<class 'pydal.objects.Field'>"
+p163
+sS'mail'
+p164
+S'<gluon.tools.Mail object>'
+p165
+sS'BODY'
+p166
+S"<class 'gluon.html.BODY'>"
+p167
+sS'IS_DATE_IN_RANGE'
+p168
+S"<class 'gluon.validators.IS_DATE_IN_RANGE'>"
+p169
+sS'IFRAME'
+p170
+S"<class 'gluon.html.IFRAME'>"
+p171
+sS'URL'
+p172
+S'<function URL>'
+p173
+sS'config'
+p174
+S"<Storage {'mail': <Storage {'login': 'labinstru2...: True, 'pool_size': 10}>, 'auth': <Storage {}>}>"
+p175
+sS'__file__'
+p176
+S"'/home/pedro/TCC2/APP_WEB/web2py_lab/applications/laboratorio/views/baixa2/inserir.html'"
+p177
+sS'db'
+p178
+S'<DAL uri="mysql:******@localhost/dblabinstru">'
+p179
+sS'auth'
+p180
+S'<gluon.tools.Auth object>'
+p181
+sS'P'
+S"<class 'gluon.html.P'>"
+p182
+sS'TFOOT'
+p183
+S"<class 'gluon.html.TFOOT'>"
+p184
+sS'XHTML'
+p185
+S"<class 'gluon.html.XHTML'>"
+p186
+sS'is_administrador'
+p187
+S'<function is_administrador>'
+p188
+sS'ON'
+p189
+S'True'
+p190
+sS'OL'
+p191
+S"<class 'gluon.html.OL'>"
+p192
+sS'TEXTAREA'
+p193
+S"<class 'gluon.html.TEXTAREA'>"
+p194
+sS'altera_img_clima'
+p195
+S'<function altera_img_clima>'
+p196
+sS'MENU'
+p197
+S"<class 'gluon.html.MENU'>"
+p198
+sS'converte_farenheit_para_celsius'
+p199
+S'<function converte_farenheit_para_celsius>'
+p200
+sS'truncate_number'
+p201
+S'<function truncate_number>'
+p202
+sS'IS_IMAGE'
+p203
+S"<class 'gluon.validators.IS_IMAGE'>"
+p204
+sS'get_max_date'
+p205
+S'<function get_max_date>'
+p206
+sS'EM'
+p207
+S"<class 'gluon.html.EM'>"
+p208
+sS'CODE'
+p209
+S"<class 'gluon.html.CODE'>"
+p210
+sS'HTTP'
+p211
+S"<class 'gluon.http.HTTP'>"
+p212
+sS'nivel_de_alerta'
+p213
+S'<function nivel_de_alerta>'
+p214
+sS'HR'
+p215
+S"<class 'gluon.html.HR'>"
+p216
+sS'IS_DATETIME'
+p217
+S"<class 'gluon.validators.IS_DATETIME'>"
+p218
+sS'Storage'
+p219
+S"<class 'gluon.storage.Storage'>"
+p220
+sS'STYLE'
+p221
+S"<class 'gluon.html.STYLE'>"
+p222
+sS'LABEL'
+p223
+S"<class 'gluon.html.LABEL'>"
+p224
+sS'CLEANUP'
+p225
+S"<class 'gluon.validators.CLEANUP'>"
+p226
+sS'SELECT'
+p227
+S"<class 'gluon.html.SELECT'>"
+p228
+sS'CENTER'
+p229
+S"<class 'gluon.html.CENTER'>"
+p230
+sS'redirect'
+p231
+S'<function redirect>'
+p232
+sS'Auth'
+p233
+S"<class 'gluon.tools.Auth'>"
+p234
+sS'COL'
+p235
+S"<class 'gluon.html.COL'>"
+p236
+sS'__builtins__'
+p237
+S"{'ArithmeticError': <type 'exceptions.ArithmeticError'>, 'AssertionError': <type 'exceptions.AssertionError'>, 'AttributeError': <type 'exceptions.AttributeError'>, 'BaseException': <type 'exceptions.BaseException'>, 'BufferError': <type 'exceptions.BufferError'>, 'BytesWarning': <type 'exceptions.BytesWarning'>, 'DeprecationWarning': <type 'exceptions.DeprecationWarning'>, 'EOFError': <type 'exceptions.EOFError'>, 'Ellipsis': Ellipsis, 'EnvironmentError': <type 'exceptions.EnvironmentError'>, ...}"
+p238
+sS'extract_fields'
+p239
+S'<function extract_fields>'
+p240
+sS'converte_mes_por_extenso'
+p241
+S'<function converte_mes_por_extenso>'
+p242
+sS'SQLFORM'
+p243
+S"<class 'gluon.sqlhtml.SQLFORM'>"
+p244
+sS'lista_de_disponibilidade'
+p245
+S'<function lista_de_disponibilidade>'
+p246
+sS'LOAD'
+p247
+S'<function LOAD>'
+p248
+sS'PRE'
+p249
+S"<class 'gluon.html.PRE'>"
+p250
+sS'FIELDSET'
+p251
+S"<class 'gluon.html.FIELDSET'>"
+p252
+sS'get_precipitacao'
+p253
+S'<function get_precipitacao>'
+p254
+sS'IS_EQUAL_TO'
+p255
+S"<class 'gluon.validators.IS_EQUAL_TO'>"
+p256
+sS'embed64'
+p257
+S'<function embed64>'
+p258
+sS'IS_LIST_OF'
+p259
+S"<class 'gluon.validators.IS_LIST_OF'>"
+p260
+sS'__name__'
+p261
+S"'__restricted__'"
+p262
+sS'EMBED'
+p263
+S"<class 'gluon.html.EMBED'>"
+p264
+sS'menu_usuario'
+p265
+S'<function menu_usuario>'
+p266
+sS'H2'
+p267
+S"<class 'gluon.html.H2'>"
+p268
+sS'H3'
+p269
+S"<class 'gluon.html.H3'>"
+p270
+sS'BUTTON'
+p271
+S"<class 'gluon.html.BUTTON'>"
+p272
+sS'get_wind_speed'
+p273
+S'<function get_wind_speed>'
+p274
+sS'H6'
+p275
+S"<class 'gluon.html.H6'>"
+p276
+sS'H4'
+p277
+S"<class 'gluon.html.H4'>"
+p278
+sS'H5'
+p279
+S"<class 'gluon.html.H5'>"
+p280
+sS'UL'
+p281
+S"<class 'gluon.html.UL'>"
+p282
+sS'get_temp_min'
+p283
+S'<function get_temp_min>'
+p284
+sS'IS_UPPER'
+p285
+S"<class 'gluon.validators.IS_UPPER'>"
+p286
+sS'baixa1_field'
+p287
+S'[<pydal.objects.Field object>, <pydal.objects.Field object>, <pydal.objects.Field object>, <pydal.objects.Field object>, <pydal.objects.Field object>, <pydal.objects.Field object>, <pydal.objects.Field object>, <pydal.objects.Field object>, <pydal.objects.Field object>, <pydal.objects.Field object>, <pydal.objects.Field object>, <pydal.objects.Field object>, <pydal.objects.Field object>, <pydal.objects.Field object>, <pydal.objects.Field object>, <pydal.objects.Field object>, <pydal.objects.Field object>, <pydal.objects.Field object>, <pydal.objects.Field object>, <pydal.objects.Field object>, ...]'
+p288
+sS'IS_TIME'
+p289
+S"<class 'gluon.validators.IS_TIME'>"
+p290
+sS'OPTION'
+p291
+S"<class 'gluon.html.OPTION'>"
+p292
+sS'TITLE'
+p293
+S"<class 'gluon.html.TITLE'>"
+p294
+sS'CRYPT'
+p295
+S"<class 'gluon.validators.CRYPT'>"
+p296
+sS'IS_EMPTY_OR'
+p297
+S"<class 'gluon.validators.IS_EMPTY_OR'>"
+p298
+sS'MARKMIN'
+p299
+S"<class 'gluon.html.MARKMIN'>"
+p300
+sS'INPUT'
+p301
+S"<class 'gluon.html.INPUT'>"
+p302
+sS'STRONG'
+p303
+S"<class 'gluon.html.STRONG'>"
+p304
+sS'get_temp_max'
+p305
+S'<function get_temp_max>'
+p306
+sS'service'
+p307
+S'<gluon.tools.Service object>'
+p308
+sS'SCRIPT'
+p309
+S"<class 'gluon.html.SCRIPT'>"
+p310
+sS'insert_baixa1'
+p311
+S'<function insert_baixa1>'
+p312
+sS'TABLE'
+p313
+S"<class 'gluon.html.TABLE'>"
+p314
+sS'process_file'
+p315
+S'<function process_file>'
+p316
+sS'IS_IPV4'
+p317
+S"<class 'gluon.validators.IS_IPV4'>"
+p318
+sS'IS_LENGTH'
+p319
+S"<class 'gluon.validators.IS_LENGTH'>"
+p320
+sS'IS_IPV6'
+p321
+S"<class 'gluon.validators.IS_IPV6'>"
+p322
+sS'XML'
+p323
+S"<class 'gluon.html.XML'>"
+p324
+sS'B'
+S"<class 'gluon.html.B'>"
+p325
+sS'IMG'
+p326
+S"<class 'gluon.html.IMG'>"
+p327
+sS'SQLTABLE'
+p328
+S"<class 'gluon.sqlhtml.SQLTABLE'>"
+p329
+sS'IS_MATCH'
+p330
+S"<class 'gluon.validators.IS_MATCH'>"
+p331
+sS'IS_ALPHANUMERIC'
+p332
+S"<class 'gluon.validators.IS_ALPHANUMERIC'>"
+p333
+sS'TBODY'
+p334
+S"<class 'gluon.html.TBODY'>"
+p335
+sS'CAT'
+p336
+S"<class 'gluon.html.CAT'>"
+p337
+sS'SPAN'
+p338
+S"<class 'gluon.html.SPAN'>"
+p339
+sS'IS_JSON'
+p340
+S"<class 'gluon.validators.IS_JSON'>"
+p341
+sS'check_NAN'
+p342
+S'<function check_NAN>'
+p343
+sS'IS_IPADDRESS'
+p344
+S"<class 'gluon.validators.IS_IPADDRESS'>"
+p345
+sS'IS_SLUG'
+p346
+S"<class 'gluon.validators.IS_SLUG'>"
+p347
+sS'BEAUTIFY'
+p348
+S"<class 'gluon.html.BEAUTIFY'>"
+p349
+sS'META'
+p350
+S"<class 'gluon.html.META'>"
+p351
+sS'boletim'
+p352
+S'<function boletim>'
+p353
+sS'H1'
+p354
+S"<class 'gluon.html.H1'>"
+p355
+sS'IS_DATE'
+p356
+S"<class 'gluon.validators.IS_DATE'>"
+p357
+sS'IS_EMAIL'
+p358
+S"<class 'gluon.validators.IS_EMAIL'>"
+p359
+sS'calendario_labinstru'
+p360
+S'<function calendario_labinstru>'
+p361
+sS'IS_NOT_EMPTY'
+p362
+S"<class 'gluon.validators.IS_NOT_EMPTY'>"
+p363
+sS'IS_FLOAT_IN_RANGE'
+p364
+S"<class 'gluon.validators.IS_FLOAT_IN_RANGE'>"
+p365
+sS'HTML'
+p366
+S"<class 'gluon.html.HTML'>"
+p367
+sS'menu_login'
+p368
+S'<function menu_login>'
+p369
+sS'associated_email'
+p370
+S'<function associated_email>'
+p371
+sS'Field'
+p372
+S"<class 'pydal.objects.Field'>"
+p373
+sS'IS_LIST_OF_EMAILS'
+p374
+S"<class 'gluon.validators.IS_LIST_OF_EMAILS'>"
+p375
+sS'Mail'
+p376
+S"<class 'gluon.tools.Mail'>"
+p377
+sS'DIV'
+p378
+S"<class 'gluon.html.DIV'>"
+p379
+sS'LEGEND'
+p380
+S"<class 'gluon.html.LEGEND'>"
+p381
+sS'converte_celsius_para_farenheit'
+p382
+S'<function converte_celsius_para_farenheit>'
+p383
+sS'COLGROUP'
+p384
+S"<class 'gluon.html.COLGROUP'>"
+p385
+sS'DAL'
+p386
+S"<class 'pydal.base.DAL'>"
+p387
+sS'ASSIGNJS'
+p388
+S'<function ASSIGNJS>'
+p389
+sS'TR'
+p390
+S"<class 'gluon.html.TR'>"
+p391
+sS'LI'
+p392
+S"<class 'gluon.html.LI'>"
+p393
+sS'process_data'
+p394
+S'<function process_data>'
+p395
+sS'TH'
+p396
+S"<class 'gluon.html.TH'>"
+p397
+sS'TD'
+p398
+S"<class 'gluon.html.TD'>"
+p399
+sS'IS_URL'
+p400
+S"<class 'gluon.validators.IS_URL'>"
+p401
+sS'A'
+S"<class 'gluon.html.A'>"
+p402
+sS'adjustement'
+p403
+S'<function adjustement>'
+p404
+sS'HEAD'
+p405
+S"<class 'gluon.html.HEAD'>"
+p406
+sS'IS_DATETIME_IN_RANGE'
+p407
+S"<class 'gluon.validators.IS_DATETIME_IN_RANGE'>"
+p408
+sS'menu_administrador'
+p409
+S'<function menu_administrador>'
+p410
+sS'FORM'
+p411
+S"<class 'gluon.html.FORM'>"
+p412
+sS'I'
+S"<class 'gluon.html.I'>"
+p413
+sS'is_persisted'
+p414
+S'<function is_persisted>'
+p415
+sS'xmlescape'
+p416
+S'<function xmlescape>'
+p417
+sS'IS_NOT_IN_DB'
+p418
+S"<class 'gluon.validators.IS_NOT_IN_DB'>"
+p419
+sg121
+S"<Storage {'body': <cStringIO.StringO object at 0... 0x7f126c3ab050>, 'view': 'baixa2/inserir.html'}>"
+p420
+sS'THEAD'
+p421
+S"<class 'gluon.html.THEAD'>"
+p422
+sS'ANY_OF'
+p423
+S"<class 'gluon.validators.ANY_OF'>"
+p424
+sS'IS_NULL_OR'
+p425
+S"<class 'gluon.validators.IS_EMPTY_OR'>"
+p426
+sS'cria_dic_med'
+p427
+S'<function cria_dic_med>'
+p428
+sg56
+S"<Storage {'_vars': None, 'function': 'inserir', ...2/APP_WEB/web2py_lab/applications/laboratorio/'}>"
+p429
+sS'IS_EXPR'
+p430
+S"<class 'gluon.validators.IS_EXPR'>"
+p431
+sS'T'
+S'<gluon.languages.translator object>'
+p432
+sS'IS_IN_SET'
+p433
+S"<class 'gluon.validators.IS_IN_SET'>"
+p434
+sS'IS_UPLOAD_FILENAME'
+p435
+S"<class 'gluon.validators.IS_UPLOAD_FILENAME'>"
+p436
+sS'index_heat'
+p437
+S'<function index_heat>'
+p438
+sS'TT'
+p439
+S"<class 'gluon.html.TT'>"
+p440
+sS'IS_DECIMAL_IN_RANGE'
+p441
+S"<class 'gluon.validators.IS_DECIMAL_IN_RANGE'>"
+p442
+sssS'traceback'
+p443
+S'Traceback (most recent call last):\n  File "/home/pedro/TCC2/APP_WEB/web2py_lab/gluon/restricted.py", line 227, in restricted\n    exec ccode in environment\n  File "/home/pedro/TCC2/APP_WEB/web2py_lab/applications/laboratorio/views/baixa2/inserir.html", line 204, in <module>\nNameError: name \'mensagem\' is not defined\n'
+p444
+s.

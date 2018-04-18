@@ -1,0 +1,522 @@
+timestamp: 2017-04-30T19:09:23.840070
+CREATE TABLE auth_user(
+    id INT AUTO_INCREMENT NOT NULL,
+    first_name VARCHAR(128),
+    last_name VARCHAR(128),
+    email VARCHAR(512),
+    password VARCHAR(512),
+    registration_key VARCHAR(512),
+    reset_password_key VARCHAR(512),
+    registration_id VARCHAR(512),
+    PRIMARY KEY (id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2017-04-30T19:16:56.857018
+CREATE TABLE auth_user(
+    id INT AUTO_INCREMENT NOT NULL,
+    first_name VARCHAR(128),
+    last_name VARCHAR(128),
+    email VARCHAR(512),
+    password VARCHAR(512),
+    registration_key VARCHAR(512),
+    reset_password_key VARCHAR(512),
+    registration_id VARCHAR(512),
+    PRIMARY KEY (id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2017-04-30T19:16:57.549339
+CREATE TABLE auth_group(
+    id INT AUTO_INCREMENT NOT NULL,
+    role VARCHAR(512),
+    description LONGTEXT,
+    PRIMARY KEY (id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2017-04-30T19:16:57.884566
+CREATE TABLE auth_membership(
+    id INT AUTO_INCREMENT NOT NULL,
+    user_id INT  , INDEX user_id__idx (user_id), FOREIGN KEY (user_id) REFERENCES auth_user (id) ON DELETE CASCADE,
+    group_id INT  , INDEX group_id__idx (group_id), FOREIGN KEY (group_id) REFERENCES auth_group (id) ON DELETE CASCADE,
+    PRIMARY KEY (id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2017-04-30T19:16:58.330143
+CREATE TABLE auth_permission(
+    id INT AUTO_INCREMENT NOT NULL,
+    group_id INT  , INDEX group_id__idx (group_id), FOREIGN KEY (group_id) REFERENCES auth_group (id) ON DELETE CASCADE,
+    name VARCHAR(512),
+    table_name VARCHAR(512),
+    record_id INT,
+    PRIMARY KEY (id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2017-04-30T19:16:58.749445
+CREATE TABLE auth_event(
+    id INT AUTO_INCREMENT NOT NULL,
+    time_stamp DATETIME,
+    client_ip VARCHAR(512),
+    user_id INT  , INDEX user_id__idx (user_id), FOREIGN KEY (user_id) REFERENCES auth_user (id) ON DELETE CASCADE,
+    origin VARCHAR(512),
+    description LONGTEXT,
+    PRIMARY KEY (id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2017-04-30T19:16:59.119086
+CREATE TABLE auth_cas(
+    id INT AUTO_INCREMENT NOT NULL,
+    user_id INT  , INDEX user_id__idx (user_id), FOREIGN KEY (user_id) REFERENCES auth_user (id) ON DELETE CASCADE,
+    created_on DATETIME,
+    service VARCHAR(512),
+    ticket VARCHAR(512),
+    renew CHAR(1),
+    PRIMARY KEY (id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2017-04-30T19:16:59.549123
+CREATE TABLE baixa1(
+    id INT AUTO_INCREMENT NOT NULL,
+    dia_hora DATETIME UNIQUE,
+    record INT,
+    batt_volt_min DOUBLE,
+    p_temp DOUBLE,
+    nr_lite_avg DOUBLE,
+    cm3_up_avg DOUBLE,
+    cm3_dn_avg DOUBLE,
+    cg3_up_corr_avg DOUBLE,
+    cg3_dn_corr_avg DOUBLE,
+    cnr1_tc_avg DOUBLE,
+    cma11_up_avg DOUBLE,
+    cma11_dn_avg DOUBLE,
+    li_190s_avg DOUBLE,
+    vw_avg DOUBLE,
+    hfp01_avg DOUBLE,
+    stp01_50cm_avg DOUBLE,
+    stp01_20cm_avg DOUBLE,
+    stp01_10cm_avg DOUBLE,
+    stp01_05cm_avg DOUBLE,
+    stp01_02cm_avg DOUBLE,
+    cs106_avg DOUBLE,
+    hmp45c_temp_avg DOUBLE,
+    hmp45c_rh_avg DOUBLE,
+    wind_speed DOUBLE,
+    win_direction DOUBLE,
+    tb4_tot DOUBLE,
+    PRIMARY KEY (id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2017-04-30T19:17:00.328419
+CREATE TABLE baixa2(
+    id INT AUTO_INCREMENT NOT NULL,
+    dia_hora DATETIME UNIQUE,
+    record INT,
+    hmp45c_temp_max DOUBLE,
+    hmp45c_temp_tmx DATE,
+    hmp45c_temp_min DOUBLE,
+    hmp45c_temp_tmin DATE,
+    hmp45c_rh_max DOUBLE,
+    hmp45c_rh_tmx DATE,
+    hmp45c_rh_min DOUBLE,
+    hmp45c_rh_tmn DATE,
+    rh05103_veloc_max DOUBLE,
+    rh05103_veloc_tmx DATE,
+    tb4_tot DOUBLE,
+    PRIMARY KEY (id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2017-05-10T13:30:23.906732
+CREATE TABLE child(
+    id INT AUTO_INCREMENT NOT NULL,
+    name VARCHAR(512),
+    wight DOUBLE,
+    birth_date DATE,
+    time_of_birth TIME,
+    PRIMARY KEY (id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2017-05-10T13:31:22.954387
+ALTER TABLE child ADD weight DOUBLE;
+success!
+timestamp: 2017-05-10T13:31:24.370587
+ALTER TABLE child DROP COLUMN wight;
+success!
+timestamp: 2017-05-10T13:42:22.977894
+ALTER TABLE child ADD birth_date__tmp DATETIME;
+success!
+UPDATE child SET birth_date__tmp=birth_date;
+success!
+ALTER TABLE child DROP COLUMN birth_date;
+success!
+ALTER TABLE child ADD birth_date DATETIME;
+success!
+UPDATE child SET birth_date=birth_date__tmp;
+success!
+ALTER TABLE child DROP COLUMN birth_date__tmp;
+success!
+success!
+timestamp: 2017-05-10T13:46:00.573841
+ALTER TABLE child ADD birth_date__tmp DATE;
+success!
+UPDATE child SET birth_date__tmp=birth_date;
+success!
+ALTER TABLE child DROP COLUMN birth_date;
+success!
+ALTER TABLE child ADD birth_date DATE;
+success!
+UPDATE child SET birth_date=birth_date__tmp;
+success!
+ALTER TABLE child DROP COLUMN birth_date__tmp;
+success!
+success!
+timestamp: 2017-05-10T13:47:03.542740
+ALTER TABLE child ADD birth_date__tmp DATETIME;
+success!
+UPDATE child SET birth_date__tmp=birth_date;
+success!
+ALTER TABLE child DROP COLUMN birth_date;
+success!
+ALTER TABLE child ADD birth_date DATETIME;
+success!
+UPDATE child SET birth_date=birth_date__tmp;
+success!
+ALTER TABLE child DROP COLUMN birth_date__tmp;
+success!
+success!
+timestamp: 2017-05-11T00:48:23.633884
+ALTER TABLE child ADD birth_date__tmp DATE;
+success!
+UPDATE child SET birth_date__tmp=birth_date;
+success!
+ALTER TABLE child DROP COLUMN birth_date;
+success!
+ALTER TABLE child ADD birth_date DATE;
+success!
+UPDATE child SET birth_date=birth_date__tmp;
+success!
+ALTER TABLE child DROP COLUMN birth_date__tmp;
+success!
+success!
+timestamp: 2017-05-11T00:57:02.134940
+CREATE TABLE aluno(
+    id INT AUTO_INCREMENT NOT NULL,
+    name VARCHAR(512),
+    sobrenome VARCHAR(512),
+    PRIMARY KEY (id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2017-08-01T18:42:01.113206
+CREATE TABLE auth_user(
+    id INT AUTO_INCREMENT NOT NULL,
+    first_name VARCHAR(128),
+    last_name VARCHAR(128),
+    email VARCHAR(512),
+    password VARCHAR(512),
+    registration_key VARCHAR(512),
+    reset_password_key VARCHAR(512),
+    registration_id VARCHAR(512),
+    PRIMARY KEY (id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2017-08-01T18:42:01.430057
+CREATE TABLE auth_group(
+    id INT AUTO_INCREMENT NOT NULL,
+    role VARCHAR(512),
+    description LONGTEXT,
+    PRIMARY KEY (id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2017-08-01T18:42:01.804092
+CREATE TABLE auth_membership(
+    id INT AUTO_INCREMENT NOT NULL,
+    user_id INT  , INDEX user_id__idx (user_id), FOREIGN KEY (user_id) REFERENCES auth_user (id) ON DELETE CASCADE,
+    group_id INT  , INDEX group_id__idx (group_id), FOREIGN KEY (group_id) REFERENCES auth_group (id) ON DELETE CASCADE,
+    PRIMARY KEY (id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2017-08-01T18:42:02.172619
+CREATE TABLE auth_permission(
+    id INT AUTO_INCREMENT NOT NULL,
+    group_id INT  , INDEX group_id__idx (group_id), FOREIGN KEY (group_id) REFERENCES auth_group (id) ON DELETE CASCADE,
+    name VARCHAR(512),
+    table_name VARCHAR(512),
+    record_id INT,
+    PRIMARY KEY (id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2017-08-01T18:42:02.462758
+CREATE TABLE auth_event(
+    id INT AUTO_INCREMENT NOT NULL,
+    time_stamp DATETIME,
+    client_ip VARCHAR(512),
+    user_id INT  , INDEX user_id__idx (user_id), FOREIGN KEY (user_id) REFERENCES auth_user (id) ON DELETE CASCADE,
+    origin VARCHAR(512),
+    description LONGTEXT,
+    PRIMARY KEY (id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2017-08-01T18:42:02.773550
+CREATE TABLE auth_cas(
+    id INT AUTO_INCREMENT NOT NULL,
+    user_id INT  , INDEX user_id__idx (user_id), FOREIGN KEY (user_id) REFERENCES auth_user (id) ON DELETE CASCADE,
+    created_on DATETIME,
+    service VARCHAR(512),
+    ticket VARCHAR(512),
+    renew CHAR(1),
+    PRIMARY KEY (id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2017-08-01T18:42:03.160857
+CREATE TABLE baixa1(
+    id INT AUTO_INCREMENT NOT NULL,
+    dia_hora DATETIME UNIQUE,
+    record INT,
+    batt_volt_min DOUBLE,
+    p_temp DOUBLE,
+    nr_lite_avg DOUBLE,
+    cm3_up_avg DOUBLE,
+    cm3_dn_avg DOUBLE,
+    cg3_up_corr_avg DOUBLE,
+    cg3_dn_corr_avg DOUBLE,
+    cnr1_tc_avg DOUBLE,
+    cma11_up_avg DOUBLE,
+    cma11_dn_avg DOUBLE,
+    li_190s_avg DOUBLE,
+    vw_avg DOUBLE,
+    hfp01_avg DOUBLE,
+    stp01_50cm_avg DOUBLE,
+    stp01_20cm_avg DOUBLE,
+    stp01_10cm_avg DOUBLE,
+    stp01_05cm_avg DOUBLE,
+    stp01_02cm_avg DOUBLE,
+    cs106_avg DOUBLE,
+    hmp45c_temp_avg DOUBLE,
+    hmp45c_rh_avg DOUBLE,
+    wind_speed DOUBLE,
+    win_direction DOUBLE,
+    tb4_tot DOUBLE,
+    PRIMARY KEY (id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2017-08-01T18:42:03.479080
+CREATE TABLE baixa2(
+    id INT AUTO_INCREMENT NOT NULL,
+    dia_hora DATETIME UNIQUE,
+    record INT,
+    hmp45c_temp_max DOUBLE,
+    hmp45c_temp_tmx DATE,
+    hmp45c_temp_min DOUBLE,
+    hmp45c_temp_tmin DATE,
+    hmp45c_rh_max DOUBLE,
+    hmp45c_rh_tmx DATE,
+    hmp45c_rh_min DOUBLE,
+    hmp45c_rh_tmn DATE,
+    rh05103_veloc_max DOUBLE,
+    rh05103_veloc_tmx DATE,
+    tb4_tot DOUBLE,
+    PRIMARY KEY (id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2017-08-01T18:42:03.864970
+CREATE TABLE aluno(
+    id INT AUTO_INCREMENT NOT NULL,
+    name VARCHAR(512),
+    sobrenome VARCHAR(512),
+    PRIMARY KEY (id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2017-11-01T10:30:14.392606
+ALTER TABLE baixa2 ADD hmp45c_temp_tmx__tmp DATETIME;
+success!
+UPDATE baixa2 SET hmp45c_temp_tmx__tmp=hmp45c_temp_tmx;
+success!
+ALTER TABLE baixa2 DROP COLUMN hmp45c_temp_tmx;
+success!
+ALTER TABLE baixa2 ADD hmp45c_temp_tmx DATETIME;
+success!
+UPDATE baixa2 SET hmp45c_temp_tmx=hmp45c_temp_tmx__tmp;
+success!
+ALTER TABLE baixa2 DROP COLUMN hmp45c_temp_tmx__tmp;
+success!
+timestamp: 2017-11-01T10:30:16.730366
+ALTER TABLE baixa2 ADD hmp45c_rh_tmx__tmp DATETIME;
+success!
+UPDATE baixa2 SET hmp45c_rh_tmx__tmp=hmp45c_rh_tmx;
+success!
+ALTER TABLE baixa2 DROP COLUMN hmp45c_rh_tmx;
+success!
+ALTER TABLE baixa2 ADD hmp45c_rh_tmx DATETIME;
+success!
+UPDATE baixa2 SET hmp45c_rh_tmx=hmp45c_rh_tmx__tmp;
+success!
+ALTER TABLE baixa2 DROP COLUMN hmp45c_rh_tmx__tmp;
+success!
+timestamp: 2017-11-01T10:30:18.713203
+ALTER TABLE baixa2 ADD hmp45c_temp_tmin__tmp DATETIME;
+success!
+UPDATE baixa2 SET hmp45c_temp_tmin__tmp=hmp45c_temp_tmin;
+success!
+ALTER TABLE baixa2 DROP COLUMN hmp45c_temp_tmin;
+success!
+ALTER TABLE baixa2 ADD hmp45c_temp_tmin DATETIME;
+success!
+UPDATE baixa2 SET hmp45c_temp_tmin=hmp45c_temp_tmin__tmp;
+success!
+ALTER TABLE baixa2 DROP COLUMN hmp45c_temp_tmin__tmp;
+success!
+timestamp: 2017-11-01T10:30:20.685947
+ALTER TABLE baixa2 ADD hmp45c_rh_tmn__tmp DATETIME;
+success!
+UPDATE baixa2 SET hmp45c_rh_tmn__tmp=hmp45c_rh_tmn;
+success!
+ALTER TABLE baixa2 DROP COLUMN hmp45c_rh_tmn;
+success!
+ALTER TABLE baixa2 ADD hmp45c_rh_tmn DATETIME;
+success!
+UPDATE baixa2 SET hmp45c_rh_tmn=hmp45c_rh_tmn__tmp;
+success!
+ALTER TABLE baixa2 DROP COLUMN hmp45c_rh_tmn__tmp;
+success!
+timestamp: 2017-11-01T10:30:22.745077
+ALTER TABLE baixa2 ADD rh05103_veloc_tmx__tmp DATETIME;
+success!
+UPDATE baixa2 SET rh05103_veloc_tmx__tmp=rh05103_veloc_tmx;
+success!
+ALTER TABLE baixa2 DROP COLUMN rh05103_veloc_tmx;
+success!
+ALTER TABLE baixa2 ADD rh05103_veloc_tmx DATETIME;
+success!
+UPDATE baixa2 SET rh05103_veloc_tmx=rh05103_veloc_tmx__tmp;
+success!
+ALTER TABLE baixa2 DROP COLUMN rh05103_veloc_tmx__tmp;
+success!
+success!
+timestamp: 2017-11-01T11:21:06.080108
+ALTER TABLE baixa2 ADD dia_hora__tmp DATETIME;
+success!
+UPDATE baixa2 SET dia_hora__tmp=dia_hora;
+success!
+ALTER TABLE baixa2 DROP COLUMN dia_hora;
+success!
+ALTER TABLE baixa2 ADD dia_hora DATETIME;
+success!
+UPDATE baixa2 SET dia_hora=dia_hora__tmp;
+success!
+ALTER TABLE baixa2 DROP COLUMN dia_hora__tmp;
+success!
+success!
+timestamp: 2017-11-01T11:25:50.918121
+ALTER TABLE baixa2 ADD dia_hora__tmp DATETIME UNIQUE;
+success!
+UPDATE baixa2 SET dia_hora__tmp=dia_hora;
+success!
+ALTER TABLE baixa2 DROP COLUMN dia_hora;
+success!
+ALTER TABLE baixa2 ADD dia_hora DATETIME UNIQUE;
+success!
+UPDATE baixa2 SET dia_hora=dia_hora__tmp;
+success!
+ALTER TABLE baixa2 DROP COLUMN dia_hora__tmp;
+success!
+success!
+timestamp: 2018-04-15T06:44:17.648715
+CREATE TABLE auth_user(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    first_name CHAR(128),
+    last_name CHAR(128),
+    email CHAR(512),
+    password CHAR(512),
+    registration_key CHAR(512),
+    reset_password_key CHAR(512),
+    registration_id CHAR(512)
+);
+success!
+timestamp: 2018-04-15T06:44:17.792344
+CREATE TABLE auth_group(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    role CHAR(512),
+    description TEXT
+);
+success!
+timestamp: 2018-04-15T06:44:17.893695
+CREATE TABLE auth_membership(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    group_id INTEGER REFERENCES auth_group (id) ON DELETE CASCADE  
+);
+success!
+timestamp: 2018-04-15T06:44:17.993303
+CREATE TABLE auth_permission(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    group_id INTEGER REFERENCES auth_group (id) ON DELETE CASCADE  ,
+    name CHAR(512),
+    table_name CHAR(512),
+    record_id INTEGER
+);
+success!
+timestamp: 2018-04-15T06:44:18.083708
+CREATE TABLE auth_event(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    time_stamp TIMESTAMP,
+    client_ip CHAR(512),
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    origin CHAR(512),
+    description TEXT
+);
+success!
+timestamp: 2018-04-15T06:44:18.173563
+CREATE TABLE auth_cas(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    created_on TIMESTAMP,
+    service CHAR(512),
+    ticket CHAR(512),
+    renew CHAR(1)
+);
+success!
+timestamp: 2018-04-15T06:44:18.270363
+CREATE TABLE baixa1(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    dia_hora TIMESTAMP UNIQUE,
+    record INTEGER,
+    batt_volt_min DOUBLE,
+    p_temp DOUBLE,
+    nr_lite_avg DOUBLE,
+    cm3_up_avg DOUBLE,
+    cm3_dn_avg DOUBLE,
+    cg3_up_corr_avg DOUBLE,
+    cg3_dn_corr_avg DOUBLE,
+    cnr1_tc_avg DOUBLE,
+    cma11_up_avg DOUBLE,
+    cma11_dn_avg DOUBLE,
+    li_190s_avg DOUBLE,
+    vw_avg DOUBLE,
+    hfp01_avg DOUBLE,
+    stp01_50cm_avg DOUBLE,
+    stp01_20cm_avg DOUBLE,
+    stp01_10cm_avg DOUBLE,
+    stp01_05cm_avg DOUBLE,
+    stp01_02cm_avg DOUBLE,
+    cs106_avg DOUBLE,
+    hmp45c_temp_avg DOUBLE,
+    hmp45c_rh_avg DOUBLE,
+    wind_speed DOUBLE,
+    win_direction DOUBLE,
+    tb4_tot DOUBLE
+);
+success!
+timestamp: 2018-04-15T06:44:18.366284
+CREATE TABLE baixa2(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    dia_hora TIMESTAMP UNIQUE,
+    record INTEGER,
+    hmp45c_temp_max DOUBLE,
+    hmp45c_temp_tmx TIMESTAMP,
+    hmp45c_temp_min DOUBLE,
+    hmp45c_temp_tmin TIMESTAMP,
+    hmp45c_rh_max DOUBLE,
+    hmp45c_rh_tmx TIMESTAMP,
+    hmp45c_rh_min DOUBLE,
+    hmp45c_rh_tmn TIMESTAMP,
+    rh05103_veloc_max DOUBLE,
+    rh05103_veloc_tmx TIMESTAMP,
+    tb4_tot DOUBLE
+);
+success!

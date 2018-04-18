@@ -1,0 +1,35 @@
+{{extend 'layoutindex.html'}}
+
+{{block jumbotron}}
+{{end}}
+
+{{block main}}
+
+<div class="container">
+	<form id="form-editar-usuario" class="col-md-6 col-md-offset-3 form-formulario" action="#" enctype="multipart/form-data" method="post">
+	
+		<img src="{{=URL('static','imagens',args='labinstru.png')}}" alt="icone-labinstru" class="img-responsive center-block">	
+	
+		<fieldset id="editaUsuario" class="">
+			<legend>Editar Usuário</legend>
+			<p>
+				<label class="form-label-user" for="nomeUsuario">Nome</label>
+				<input class="form-input-user form-control" type="text" id="nomeUsuario" name="first_name" value="{{=session.auth.user.first_name}}" required>
+			</p>
+
+			<p>
+				<label class="form-label-user" for="sobrenomeUsuario">Sobrenome</label>
+				<input class="form-input-user form-control" type="text" id="sobrenomeUsuario" name="last_name"
+				value="{{=session.auth.user.last_name}}" required>
+			</p>
+
+			<p>
+				<label class="form-label-user" for="emailUsuario">E-mail</label>
+				<input class="form-input-user form-control" type="text" id="emailUsuario" name="email" value="{{=session.auth.user.email}}" required>
+			</p>
+		</fieldset>
+		<button class="btn btn-success btn-aux">Editar Usuário</button>
+	{{=profile.custom.end}}
+</div> <!-- /container -->
+
+{{end}}

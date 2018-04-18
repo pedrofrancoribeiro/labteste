@@ -1,0 +1,458 @@
+{{def menu_administrador():}}
+	<!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top navbar-labinstru">
+      <div class="container">
+        
+        <div class="navbar-header">
+
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <a href="{{=URL('home','menu')}}" class="navbar-brand">
+            <img class="img-menu"  src="{{=URL('static','imagens',args='labinstru.png')}}" alt="Brand" width="130">
+          </a>
+
+        </div>
+
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right menu-labinstru">
+
+            <li>
+              <a href="{{=URL('home','menu')}}">
+                Home
+              </a>
+            </li> <!-- aba home -->
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle dropdown-index" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                Medições<span class="caret indicativo-menu"></span>
+              </a>
+              <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                <li class="dropdown-submenu">
+                  <a href="#" tabindex="-1">
+                    Baixa 1
+                  </a>
+
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="{{=URL('baixa1','inserir')}}" tabindex="-1">
+                        <i class="icon icon-user glyphicon glyphicon-plus"></i> Inserir
+                      </a>
+                    </li>
+
+                    <li class="divider"></li>
+
+                    <li>
+                      <a href="{{=URL('baixa1','selecionar',args='exibir2')}}" tabindex="-1">
+                        <i class="icon icon-user glyphicon glyphicon-search"></i> Consultar
+                      </a>
+                    </li>
+
+                    <li class="divider"></li>
+
+                    <li>
+                      <a href="{{=URL('baixa1','selecionar',args='apagar')}}" tabindex="-1">
+                        <i class="icon icon-user glyphicon glyphicon-trash"></i> Apagar
+                      </a>
+                    </li>
+                    
+                    <li class="divider"></li>
+
+                    <li>
+                      <a href="{{=URL('baixa1','disponibilidade')}}" tabindex="-1">
+                        <i class="icon icon-user glyphicon glyphicon-thumbs-up"></i> Disponibilidade
+                      </a>
+                    </li>
+                  </ul>
+
+                </li> <!-- baixa 1-->
+
+                <li role="separator" class="divider"></li>
+
+                <li class="dropdown-submenu">
+                  <a href="#" tabindex="-1">
+                    Baixa 2
+                  </a>
+
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="{{=URL('baixa2','inserir')}}" tabindex="-1">
+                        <i class="icon icon-user glyphicon glyphicon-plus"></i> Inserir
+                      </a>
+                    </li>
+
+                    <li class="divider"></li>
+
+                    <li>
+                      <a href="{{=URL('baixa2','selecionar')}}" tabindex="-1">
+                        <i class="icon icon-user glyphicon glyphicon-search"></i> Consultar
+                      </a>
+                    </li>
+
+                    <li class="divider"></li>
+
+                    <li>
+                      <a href="{{=URL('baixa2','apagar')}}" tabindex="-1">
+                        <i class="icon icon-user glyphicon glyphicon-trash"></i> Apagar
+                      </a>
+                    </li>
+
+                    <li class="divider"></li>
+
+                    <li>
+                      <a href="{{=URL('baixa2','disponibilidade')}}" tabindex="-1">
+                        <i class="icon icon-user glyphicon glyphicon-thumbs-up"></i> Disponibilidade
+                      </a>
+                    </li>
+                    
+                  </ul>
+
+                </li> <!-- baixa 2-->
+
+                <li class="divider"></li>
+
+                <li>
+                  <a href="{{=URL('boletim','boletim')}}" tabindex="-1">
+                    <i class="icon icon-user glyphicon glyphicon-calendar"></i> Boletim
+                  </a>
+                </li>
+
+              </ul>
+            </li> <!-- aba medições -->
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle dropdown-index" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                Administração <span class="caret indicativo-menu"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="{{=URL('home','cadastrar')}}">
+                    <i class="icon icon-user glyphicon glyphicon-user"></i> Cadastrar usuário
+                  </a>
+                </li>
+                <li role="separator" class="divider"></li>
+                <li>
+                  <a href="{{=URL('home','listar')}}">
+                    <i class="icon icon-user glyphicon glyphicon-list-alt"></i> Listar usuários
+                  </a>
+                </li>
+              </ul>
+            </li> <!-- aba administração -->
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle dropdown-index" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <div id="saudacao"></div> {{=session.auth.user.first_name}} <span class="caret indicativo-menu"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="{{=URL('home','change_password')}}">
+                    <i class="icon icon-user glyphicon glyphicon-lock"></i> Redefinir senha
+                  </a>
+                </li>
+                
+                <li>
+                  <a href="{{=URL('home','profile')}}">
+                    <i class="icon icon-user glyphicon glyphicon-pencil"></i> Alterar perfil
+                  </a>
+                </li>
+                <li role="separator" class="divider"></li>
+                <li>
+                  <a href="{{=URL('home/user','logout')}}">
+                    <i class="icon icon-user glyphicon glyphicon-off"></i> Logout
+                  </a>
+                </li> <!-- aba logout -->
+              </ul>
+            </li> <!-- configurações -->
+
+          </ul>
+        </div><!--/.nav-collapse -->
+
+      </div>
+    </nav>
+{{return}}
+
+{{def menu_usuario():}}
+	<!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top navbar-labinstru">
+      <div class="container">
+        
+        <div class="navbar-header">
+
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <a href="{{=URL('home','menu')}}" class="navbar-brand">
+            <img class="img-menu"  src="{{=URL('static','imagens',args='labinstru.png')}}" alt="Brand" width="130">
+          </a>
+        </div>
+
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right menu-labinstru">
+
+            <li>
+              <a href="{{=URL('home','menu')}}">
+                Home
+              </a>
+            </li> <!-- aba home -->
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle dropdown-index" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                Medições<span class="caret indicativo-menu"></span>
+              </a>
+              <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                <li class="dropdown-submenu">
+                  <a href="#" tabindex="-1">
+                    Baixa 1
+                  </a>
+
+                  <ul class="dropdown-menu">
+
+                    <li>
+                      <a href="{{=URL('baixa1','selecionar')}}" tabindex="-1">
+                        <i class="icon icon-user glyphicon glyphicon-search"></i> Consultar
+                      </a>
+                    </li>
+
+                    <li class="divider"></li>
+
+                    <li>
+                      <a href="{{=URL('baixa1','disponibilidade')}}" tabindex="-1">
+                        <i class="icon icon-user glyphicon glyphicon-thumbs-up"></i> Disponibilidade
+                      </a>
+                    </li>
+                  </ul>
+
+                </li> <!-- baixa 1-->
+
+                <li role="separator" class="divider"></li>
+
+                <li class="dropdown-submenu">
+                  <a href="#" tabindex="-1">
+                    Baixa 2
+                  </a>
+
+                  <ul class="dropdown-menu">
+
+                    <li>
+                      <a href="{{=URL('baixa2','selecionar')}}" tabindex="-1">
+                        <i class="icon icon-user glyphicon glyphicon-search"></i> Consultar
+                      </a>
+                    </li>
+
+                    <li class="divider"></li>
+
+                    <li>
+                      <a href="{{=URL('baixa2','disponibilidade')}}" tabindex="-1">
+                        <i class="icon icon-user glyphicon glyphicon-thumbs-up"></i> Disponibilidade
+                      </a>
+                    </li>
+                    
+                  </ul>
+
+                </li> <!-- baixa 2-->
+
+                <li class="divider"></li>
+
+                <li>
+                  <a href="#" tabindex="-1">
+                    <i class="icon icon-user glyphicon glyphicon-calendar"></i> Boletim
+                  </a>
+                </li>
+
+              </ul>
+            </li> <!-- aba medições -->
+
+            <li class="dropdown">
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle dropdown-index" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <div id="saudacao"></div> {{=session.auth.user.first_name}} <span class="caret indicativo-menu"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="{{=URL('home','change_password')}}">
+                    <i class="icon icon-user glyphicon glyphicon-lock"></i> Redefinir senha
+                  </a>
+                </li>
+                
+                <li>
+                  <a href="{{=URL('home','profile')}}">
+                    <i class="icon icon-user glyphicon glyphicon-pencil"></i> Alterar perfil
+                  </a>
+                </li>
+                <li role="separator" class="divider"></li>
+                <li>
+                  <a href="{{=URL('home/user','logout')}}">
+                    <i class="icon icon-user glyphicon glyphicon-off"></i> Logout
+                  </a>
+                </li> <!-- aba logout -->
+              </ul>
+            </li> <!-- configurações -->
+
+          </ul>
+        </div><!--/.nav-collapse -->
+
+      </div>
+    </nav>
+{{return}}
+
+{{def menu_login():}}
+	<!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top navbar-labinstru">
+      <div class="container">
+        
+        <div class="navbar-header">
+
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <a href="{{=URL('home','index')}}" class="navbar-brand">
+            <img class="img-menu" src="{{=URL('static','imagens',args='labinstru.png')}}" alt="Brand" width="130">
+          </a>
+
+        </div>
+
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right menu-labinstru">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle dropdown-index" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              	LOG IN <span class="caret indicativo-menu"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="{{=URL('home','login')}}">
+                    <i class="icon icon-user glyphicon glyphicon-off"></i> LOG IN
+                  </a>
+                </li>
+                <li role="separator" class="divider"></li>
+                <li>
+                  <a href="{{=URL('home','retrieve_password')}}">
+                    <i class="icon icon-user glyphicon glyphicon-lock"></i> Esqueci Minha Senha
+                  </a>
+                </li>
+
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+
+      </div>
+    </nav>
+{{return}}
+
+{{def calendario_labinstru(mes,ano):}}
+    {{
+        import calendar
+        cal = calendar.Calendar()
+        semanas = cal.monthdayscalendar(ano,mes)
+        disp = lista_de_disponibilidade(ano,mes)
+    }}
+    <h3 class="text-center">{{=converte_mes_por_extenso(mes)}} de {{=ano}}</h3>
+    <table>
+        <tr>
+            <th>Seg</th>
+            <th>Ter</th>
+            <th>Qua</th>
+            <th>Qui</th>
+            <th>Sex</th>
+            <th>Sab</th>
+            <th>Dom</th>
+        </tr>
+        {{for semana in semanas:}}
+            <tr>
+                {{for dia in semana:}}
+                    {{if dia == 0:}}
+                        <td></td>
+                    {{else:}}
+                        <td class={{=disp[dia][1]}}>{{=dia}}</td>
+                    {{pass}}
+                {{pass}}
+            </tr>
+        {{pass}}
+    </table>
+{{return}}
+
+{{def boletim():}}
+    <div id="div" class="conteiner-boletim">
+
+        <div id="img-clima" class="{{=regra_css}} cor-de-fundo">
+            <!--<img class="" src="{{=URL('static','imagens/boletim',args='38.png')}}" alt="">-->
+        </div><!-- #img-clima -->
+
+        <div id="data-boletim" class="cor-de-fundo">
+            <hgroup>
+                <h3 class=""><b>Manaus - AM</b></h3>
+                <h2 class="">{{=dia}}/{{=mes}}/{{=ano}}</h2>
+            </hgroup>
+        </div><!-- #data-boletim -->
+
+        <div id="valor-precipitacao" class="cor-de-fundo">
+          <h2 class="text-center"><b>Precipitação:</b> <b id="val-prec">{{=precipitacao}} mm</b></h2>
+        </div><!-- #valor-precipitacao -->
+
+        <div id="temperaturas-boletim" class="cor-de-fundo">
+          <header>
+             <h2><b>Temperaturas</b></h2>
+          </header>
+
+            <div id="temp-min" class="">
+                <h4 class="text-left"><b>Mínima:</b> {{=temp_min}} °C</h4>
+            </div><!-- #temp-min -->
+
+            <div id="temp-max" class="">
+                <h4 class="text-right"><b>Máxima:</b> {{=temp_max}} °C</h4>
+            </div>
+
+        </div><!--#temperaturas-boletim -->
+
+        <div id="conteiner-informativo-vento" class="cor-de-fundo">
+            <div id="informativo-vento">
+                <header>
+                    <h3><b>RAJADA</b></h3>
+                </header>
+                <section>
+                    <p>{{=wind_speed}} m/s</p>
+                </section>
+            </div>
+        </div><!--#conteiner-informativo-vento -->
+
+        <div id="conteiner-indice-calor" class="cor-de-fundo">
+            <div id="indice-calor">
+                <header>
+                    <h3><b>Índice de Calor</b></h3>
+                </header>
+                <div id="valor-calor" class="">
+                    <p>{{=index_heat}} °C</p>
+                </div><!-- #valor-calor -->
+                <div id="imagem-calor" class="">
+                    <img src="{{=URL('static','imagens',args='indice-calor-pequeno.png')}}" alt="">
+                </div><!-- #imagem-calor -->
+            </div>
+
+        </div><!-- #conteiner-indice-calor -->
+
+        <div id="escala-beaufort" class="cor-de-fundo">
+            <p><b>{{=escala}}</b></p>
+        </div><!-- #escala-beaufort -->
+
+        <div id="nivel-calor" class="cor-de-fundo">
+            <p><b>{{=alerta_ic}}</b></p>
+        </div><!-- #nivel-calor -->
+
+        <div id="boletim-rodape" class="">
+
+        </div>
+    </div><!-- #conteiner-boletim -->
+{{return}}

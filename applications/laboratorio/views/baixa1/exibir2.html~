@@ -1,0 +1,27 @@
+{{extend 'layoutindex.html'}}
+
+{{block jumbotron}}
+{{end}}
+
+{{block main}}
+
+	<div class="container">
+		<div class="col-lg-12">
+
+			<h4 class="text-success text-right">Total de registros: {{=count_registros}}</h4>
+			<div class="panel panel-success panel-usuarios">
+				<div class="panel-heading panel-head-padrao">
+					<h2 class="text-center">Registros Estação Baixa 1</h2>
+				</div>
+
+				<div class="panel-body">
+					<div class="table-responsive">
+						{{=table}}
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		
+	</div> <!-- /container -->
+{{end}}

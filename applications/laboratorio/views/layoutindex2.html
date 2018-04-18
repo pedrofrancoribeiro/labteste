@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <link rel="icon" href="../../favicon.ico">
+
+      <title>Labinstru</title>
+
+      <!-- Bootstrap core CSS -->
+      <link href="{{=URL('static','css',args='bootstrap.css')}}" rel="stylesheet">
+
+      <!-- Bootstrap core CSS -->
+      <link href="{{=URL('static','css',args='bootstrap-theme.min.css')}}" rel="stylesheet">
+
+      <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+      <link href="{{=URL('static','css',args='ie10-viewport-bug-workaround.css')}}" rel="stylesheet">
+
+      <!-- Custom styles for this template -->
+      <link href="{{=URL('static','css',args='theme.css')}}" rel="stylesheet">
+
+      <link href="{{=URL('static','css',args='jumbotron.css')}}" rel="stylesheet">
+
+      <link href="{{=URL('static','css',args='calendar.css')}}" rel="stylesheet">
+
+      <link href="{{=URL('static','css',args='lista-usuarios.css')}}" rel="stylesheet">
+
+      <!-- Meus estilos css -->
+      <link href="{{=URL('static','css',args='estilo.css')}}" rel="stylesheet">
+      
+      <link href="{{=URL('static','css',args='usuario.css')}}" rel="stylesheet">
+      
+  
+      <!-- JavaScript -->
+
+      <script src="{{=URL('static','js',args='scripts.js')}}"></script>
+
+      <script src="{{=URL('static','js',args='inserir.js')}}"></script>
+
+      <script src="{{=URL('static','js',args='ie-emulation-modes-warning.js')}}"></script>
+
+      <script src="{{=URL('static','js',args='calendar.js')}}"></script>
+
+      <script src="{{=URL('static','js',args='web2py.js')}}"></script>
+
+      <script src="{{=URL('static','js',args='jquery.js')}}"></script>
+
+      <script src="{{=URL('static','js',args='bootstrap.min.js')}}"></script>
+
+      <script src="{{=URL('static','js',args='docs.min.js')}}"></script>
+
+      {{include 'web2py_ajax.html'}} <!-- this includes jquery.js, calendar.js/.css and web2py.js -->
+  
+      {{include "functions.html"}}
+
+      {{block head}}
+      {{end}}
+
+  </head>
+
+  <body>
+  
+    {{block navbar-index}}
+    
+      {{if session.auth == None:}}
+          {{menu_login()}}
+      {{elif is_administrador(session.auth.user.id):}}
+          {{menu_administrador()}}
+      {{else:}}
+          {{menu_usuario()}}
+      {{pass}}
+    
+    {{end}} <!-- fim block navbar-index -->
+
+   {{block jumbotron}} 
+      <div class="jumbotron">
+        <div class="container">
+          
+          <h1>
+            Bem-vindo ao LabInstru!
+          </h1>
+
+          <p>
+            O Laboratório de Instrumentação Meteorológica da EST/UEA, conhecido como Labinstru, foi criado para atender as demandas do curso de graduação de meteorologia.
+          </p>
+
+        </div>
+      </div>
+    {{end}}
+
+    <div class="container">
+      {{block main}}
+
+        {{block row}}
+          <div class="row">
+            
+            {{block bloco1}}
+              <div class="col-md-4">
+
+                <h2>Apresentação</h2>
+
+                <figure class="foto-legenda">
+                  <img src="{{=URL('static','imagens',args='lab4.JPG')}}">
+                  <figcaption>
+                    <h5>aulas com os instrumentos do laboratório</h5>
+                  </figcaption>  
+                </figure>
+
+                <p>
+                  O labinstru encontra-se equipado com diversos sensores meteorológicos, os quais são utilizados durante as aulas práticas da disciplina instrumentação meteorológica, além de conjuntos de estações meteorológicas adquiridos através de projetos de pesquisas.
+                </p>
+
+                <p>
+                  Também dispompos de aparelhos como fontes de alimentação, estação de solda, GPS, bem como diversas ferramentas que são necessárias para o funcionamento adequado do laboratório e para instalação e manutenção das estações meteorológicas.
+                </p>
+
+              </div> <!-- /.col-md-4 -->
+            {{end}}<!-- fim blcok bloco1 -->
+
+            {{block bloco2}}
+              <div class="col-md-4">
+                <h2>Atividades</h2>
+
+                <figure class="foto-legenda">
+                    <img src="{{=URL('static','imagens',args='lab5.JPG')}}">
+                    <figcaption>
+                      <h5>Estação de medida do labinstru</h5>
+                    </figcaption>
+                </figure>
+
+                <p>
+                  <ul>
+                    <li>
+                      Manter a estação meteorológica em funcionamento contínuo
+                    </li>
+                    <li>
+                      Organizar os dados coletados nas estações instaladas através do laboratório
+                    </li>
+                    <li>
+                      Suporte aos projetos de pesquisas no que diz respeito à estação de instrumentos meteorológicos
+                    </li>
+                  </ul>
+
+                </p>
+              </div> <!-- /.col-md-4 -->
+           {{end}} <!-- fim block bloco2 -->
+
+           {{block bloco3}}
+              <div class="col-md-4">
+
+                <h2>Localização</h2>
+
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.008045800548!2d-60.020003785900045!3d-3.092517141133872!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x926c1aa5a5540129%3A0x148088e86e2c44f7!2sEscola+Superior+de+Tecnologia+-+EST!5e0!3m2!1spt-BR!2sbr!4v1482944473664" width="350" height="324" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+                <p>
+
+                  <ul>
+                    <li>
+                      Laboratório de Instrumentação Meteorológica
+                    </li>
+                    <li>
+                      Sala C29
+                    </li>
+                    <li>
+                      Universidade do Estado do Amazonas - UEA
+                    </li>
+                    <li>
+                      Escola Superior de Tecnologia - EST
+                    </li>
+                    <li>
+                      Av. Darcy Vargas, 1200 Manaus, Amazonas
+                    </li>
+                  </ul>
+
+                </p>
+
+              </div> <!-- /.col-md-4 -->
+          {{end}} <!-- fim block bloco3 -->
+
+          </div> <!-- /.row -->
+        {{end}}<!-- fim block row -->
+
+      {{end}} <!-- block main -->
+
+      {{block footer}}
+        <div class="container-fluid">
+          <div class="row">
+          <footer class="footer">
+            <hr>
+            <div class="pull-left">
+              <p>&copy; 2016 Company, Inc.</p>
+            </div>
+
+            <div class="pull-right">
+              
+              <div class="rede" id="facebook">
+                <a href="http://www.uol.com.br" target="_blank">
+                  <img class="icone" src="{{=URL('static','imagens',args='facebook.png')}}">
+                </a>
+              </div>
+
+              <div class="rede" id="twitter">
+                <a href="http://www.google.com.br" target="_blank">
+                  <img class="icone" src="{{=URL('static','imagens',args='twitter.png')}}">
+                </a>
+              </div>
+
+              <div class="rede" id="plus">
+                <a href="http://www.uea.edu.br" target="_blank">
+                  <img class="icone" src="{{=URL('static','imagens',args='plus.png')}}">
+                </a>
+              </div>
+
+              <div class="rede" id="instagram">
+                <a href="http://www.google.com.br" target="_blank">
+                  <img class="icone" src="{{=URL('static','imagens',args='instagram.png')}}">
+                </a>
+              </div>
+
+            </div> <!-- .pull-right -->
+
+          </footer>
+          </div>
+        </div>
+      {{end}}
+    
+    </div> <!-- /container -->
+  </body>
+</html>

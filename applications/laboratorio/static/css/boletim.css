@@ -1,0 +1,345 @@
+div.cor-de-fundo {
+    box-shadow: inset 0 0 10px #777777;
+    background:#ffffff;
+    border-radius : 5px;
+}
+
+/*
+    div#conteiner-boletim: Contêiner base do boletim meteorológico
+*/
+div.conteiner-boletim {
+    box-shadow: 0 0 10px #777777;
+    margin:0px auto;
+    width:400px;
+    height:500px;
+    position:relative;
+    padding: 10px;
+    background:#4f9468;
+    background: linear-gradient(rgba(209,235,220,1), rgba(209,235,220,0.7), rgba(209,235,220,0));
+}
+/** fim do estilo #conteiner-boletim **/
+
+/*
+    div#img-clima: Elemento html responsável por exibir uma imagem referente ao clima
+    para aquele determinado dia
+*/
+div#img-clima {
+    width: 120px;
+    height: 86px;
+    position:absolute;
+    top:10px;
+    left: 10px;
+}
+
+div.img-sol {
+    background:none;
+    background:#ffffff url("../imagens/boletim/sol-2.jpg") no-repeat center center;
+}
+
+div.img-chuva {
+    background:none;
+    background:#ffffff url("../imagens/boletim/chuva-1.png") no-repeat center center;
+}
+/** fim do estilo #img-clima **/
+
+/** #data-boletim:Elemento HTML div responsável por exibir a localidade e data
+    do boletim que está sendo exibido **/
+div#data-boletim {
+    width: 250px;
+    height: 86px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background:#ffffff url("../imagens/boletim/icone-calendario.png") no-repeat 95% 15%;
+}
+
+div#data-boletim hgroup h3, h2 {
+    margin: 0px 5px;
+    padding:2px;
+    text-align:left;
+}
+
+div#data-boletim hgroup h3 {
+    color: black;
+    font-weight:bold;
+}
+
+div#data-boletim hgroup h2 {
+    color:blue;
+}
+/** fim do estilo #data-boletim **/
+
+/** #valor-precipitacao: Elemento HTML div responsável por informar o nível de precipitação
+    para aquele dia correspondente **/
+div#valor-precipitacao {
+    width: 380px;
+    height: 50px;
+    position: absolute;
+    top: 120px;
+    left: 10px;
+}
+
+div#valor-precipitacao b#val-prec {
+    color: blue;
+}
+/** fim do estilo #valor-precipitacao **/
+
+/** #temperaturas-boletim: Elemento HTML div responsável por informar as temperaturas
+    mínima e máxima para aquele determinado dia **/
+div#temperaturas-boletim {
+    width:380px;
+    height: 90px;
+    position: absolute;
+    top: 180px;
+    left: 10px;
+}
+
+div#temperaturas-boletim header h2 {
+    text-align: center;
+}
+
+div#temp-min, div#temp-max {
+    width: 180px;
+    height: 40px;
+    position:absolute;
+    top: 40px;
+}
+
+div#temp-min {
+     left: 5px;
+     background:#fff url("../imagens/boletim/temp_min.jpeg") no-repeat 99% 48%;
+}
+
+div#temp-min h4 {
+    margin-left:10px;
+}
+
+div#temp-min h4 b {
+    color: blue;
+}
+
+div#temp-max {
+    right: 5px;
+    background:#fff url("../imagens/boletim/tem_max.jpeg") no-repeat 99% 48%;
+}
+
+div#temp-max h4 {
+    text-align: left;
+    margin-left: 10px;
+}
+
+div#temp-max h4 b {
+    color: red;
+}
+/** fim do estilo #temperaturas-boletim **/
+
+/** #conteiner-informativo-vento **/
+div#conteiner-informativo-vento {
+    width: 180px;
+    height: 100px;
+    position:absolute;
+    top:280px;
+    left: 10px;
+}
+div#informativo-vento {
+    background: url("../imagens/rajada-pequena.png") no-repeat 8% 80%;
+    width:100%;
+    height:100%;
+}
+
+div#informativo-vento header {
+    padding: 2px;
+}
+
+div#informativo-vento header h3 {
+    margin: 4px 0px 1px 0px;
+    text-align:center;
+}
+
+div#informativo-vento section {
+    margin:1px 0px 2px 0px;
+}
+
+div#informativo-vento section p {
+    margin:15px 0px;
+    padding: 0px 7px 0px 0px;
+    text-align:right;
+    font-size: 1.4em;
+    font-weight: bold;
+}
+/** fim do estilo #conteiner-informativo-vento **/
+
+/** #conteiner-indice-calor **/
+div#conteiner-indice-calor {
+    width: 180px;
+    height: 100px;
+    position:absolute;
+    top:280px;
+    right: 10px;
+}
+
+div#indice-calor header {
+    padding: 2px;
+}
+
+div#indice-calor header h3 {
+    margin: 4px 0px 1px 0px;
+    text-align:center;
+}
+
+div#valor-calor, div#imagem-calor {
+    height: 66px;
+    position:absolute;
+    top: 30px;
+}
+
+div#valor-calor {
+    width: 100px;
+    left:5px;
+}
+
+div#valor-calor p {
+    text-align:center;
+    margin:15px 0px 0px 0px;
+    font-size:1.8em;
+    font-weight:bold;
+}
+
+div#imagem-calor {
+    width: 60px;
+    right:5px;
+}
+
+div#imagem-calor img {
+    display:block;
+    margin: 2px auto 0px auto;
+}
+/** fim do estilo #conteiner-indice-calor **/
+
+/** #escala-beaufort: Elemento HTML div responsável em renderizar a classificação da rajada de vento **/
+div#escala-beaufort {
+    width: 180px;
+    height: 40px;
+    position:absolute;
+    top:390px;
+    left: 10px;
+}
+
+div#escala-beaufort p {
+    text-align:center;
+    padding:0px;
+    margin-top:7px;
+    font-size: 14pt;
+}
+/** fim do estlilo #escala-beaufort **/
+
+/** #nivel-calor: Elemento HTML div responsável em renderizar a classificação do nível de calor **/
+div#nivel-calor {
+    width: 180px;
+    height: 40px;
+    position:absolute;
+    top:390px;
+    right: 10px;
+}
+
+div#nivel-calor p {
+    text-align:center;
+    padding:0px;
+    margin-top:7px;
+    font-size: 14pt;
+}
+/** fim do estilo #nivel-calor **/
+
+/** #boletim-rodape: Elemento HTML div responsável por renderizar o rodapé do boletim **/
+div#boletim-rodape  {
+    background:url("../imagens/labinstru2.png") no-repeat 96% 50%,
+        url("../imagens/logo-uea-peq.png") no-repeat 0% 50% ;
+    width:380px;
+    height:50px;
+    position: absolute;
+    top: 440px;
+    left:10px;
+}
+/** fim do estilo #boletim-rodape **/
+
+/** Estilos CSS diversos **/
+
+div.cor-de-fundo-2 {
+    box-shadow: inset 0 0 10px #093;
+    background:#ffffff;
+    border-radius : 5px;
+}
+
+img.pequeno {
+    width:135px;
+    height:130px;
+}
+/** Fim dos Estilos CSS **/
+
+/** Colunas **/
+div.col-boletim {
+}
+/** fim das colunas **/
+
+div.conteiner-col-1 {
+    padding:5px 4px;
+    margin: 0px 2px 5px 2px;
+}
+
+div.conteiner-col-1 header {
+    width:100%;
+}
+
+div.conteiner-col-1 header h3 {
+    color:#000;
+    text-align: center;
+    text-shadow: -1px -1px #fff;
+}
+
+div.conteiner-col-1 section {
+    padding: 5px;
+}
+
+div.conteiner-col-1 section form label {
+    display:inline-block;
+    font-size: 1.4em;
+    font-weight: bold;
+    width:50px;
+    text-align:left;
+}
+
+div.conteiner-col-1 section form input, select {
+    border: 1px solid #CCC;
+    box-shadow: inset 2px 2px 2px #EEE;
+    font-size: 1.2em;
+    padding: 2px 5px;
+    display: inline-block;
+    width: 160px;
+}
+
+div.conteiner-col-1 p {
+    text-align:center;
+}
+
+div.conteiner-col-2 {
+    width: 100%;
+    position:relative;
+}
+
+div.conteiner-col-2 button {
+    position: absolute;
+    top:468px;
+    right:0px;
+}
+
+div.conteiner-col-3 {
+    box-shadow: 0 0 10px #777777;
+    margin:0px auto;
+    width:100%;
+    height:500px;
+    position:relative;
+    padding: 10px;
+    background:#4f9468;
+    background: linear-gradient(rgba(209,235,220,1), rgba(209,235,220,0.7), rgba(209,235,220,0));
+}
+

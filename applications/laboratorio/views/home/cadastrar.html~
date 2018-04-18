@@ -1,0 +1,47 @@
+{{extend 'layoutindex.html'}}
+
+{{block jumbotron}}
+{{end}}
+
+{{block main}}
+
+    <form class="col-md-6 col-md-offset-3 form-formulario" action="#" enctype="multipart/form-data" method="post">
+
+        <img src="{{=URL('static','imagens',args='labinstru.png')}}" alt="icone-labinstru" class="img-responsive center-block">
+
+        <fieldset id="cadastraUsuario" class="col-md-12">
+            <legend>Novo Usuário</legend>
+            <p>
+                <label class="form-label-user" for="nomeUsuario">Nome</label>
+                <input class="form-input-user form-control" type="text" id="nomeUsuario" name="first_name" required>
+                <span class="hint">nome do usuário</span>
+            </p>
+
+            <p>
+                <label class="form-label-user" for="sobrenomeUsuario">Sobrenome</label>
+                <input class="form-input-user form-control" type="text" id="sobrenomeUsuario" name="last_name" required>
+                <span class="hint">sobrenome do usuário</span>
+            </p>
+
+            <p>
+                <label class="form-label-user" for="emailUsuario">E-mail</label>
+                <input class="form-input-user form-control" type="text" id="emailUsuario" name="email" required>
+                <span class="hint">email do usuário</span>
+            </p>
+
+            <p>
+                <input class="form-input-user" type="hidden" id="senhaUsuario" name="password" value="123456">
+            </p>
+        </fieldset>
+        <br>
+        <button class="btn btn-success btn-aux">Cadastrar Usuário</button>
+    {{=form.custom.end}}
+    <br>
+    {{if mensagem:}}
+        <div id="alertCadastrado" class=" col-md-6 col-md-offset-3 {{=mensagemClass}}">
+            {{=mensagem}}
+            <button class="close" data-dismiss="alert">&times;</button>
+        </div>
+    {{pass}}
+
+{{end}}

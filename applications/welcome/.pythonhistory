@@ -1,0 +1,25 @@
+from gluon import *
+banco = DAL('sqlite://meubanco.db')
+banco.tables
+banco.define_table('carros',Field('marca'),Field('modelo'))
+banco.tables
+banco.carros.fields
+banco.carros.insert(marca='GM',modelo='Corsa')
+banco.carro.insert(marca='AUDI',modelo='A4')
+banco.carros.insert(marca='AUDI',modelo='A4')
+banco.commit()
+banco.carros.insert(marca='Toyota',modelo='Corolla')
+banco.carros.insert(marca='Volks',modelo='Fusca')
+banco.carros.insert(marca='Renault',modelo='Clio')
+banco.commit()
+registros = banco().select(banco.carros.ALL)
+for registro in registros:
+    print registro.marca,registro.modelo
+registros = banco(banco.carros.id > 0).select()
+carros = banco.carros
+marca = carros.marca
+query = marca = 'Toyota'
+conjunto banco(query)
+conjunto= banco(query)
+registros = conjunto.select()
+registross = conjunto.select()

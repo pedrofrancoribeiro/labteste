@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="">
+        <meta name="author" content="pedro" >
+        <link rel="icon" href="../../favicon.ico">
+
+        <title>LabInstru</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="{{=URL('static','css',args='bootstrap.min.css')}}" rel="stylesheet">
+
+        <!-- Bootstrap core CSS -->
+        <link href="{{=URL('static','css',args='bootstrap-theme.min.css')}}" rel="stylesheet">
+
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <link rel="stylesheet" href="{{=URL('static','css',args='ie10-viewport-bug-workaround.css')}}">
+
+        <!-- Contém alguns estilos gerais das páginas -->
+        <link rel="stylesheet" href="{{=URL('static','css',args='estilo.css')}}">
+
+        <link href="{{=URL('static','css',args='calendar.css')}}" rel="stylesheet">
+
+        <link href="{{=URL('static','css',args='lista-usuarios.css')}}" rel="stylesheet">
+
+        <link href="{{=URL('static','css',args='usuario.css')}}" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link rel="stylesheet" href="{{=URL('static','css',args='offcanvas.css')}}">
+
+        <script src="{{=URL('static','js', args='ie-emulation-modes-warning.js')}}"></script>
+
+        {{include 'web2py_ajax.html'}} <!-- this includes jquery.js, calendar.js/.css and web2py.js -->
+        {{include 'functions.html'}}
+
+        {{block head}}
+        {{end}}
+    </head>
+
+    <body>
+        {{block navbar-index}}
+            {{if session.auth == None:}}
+                {{menu_login()}}
+            {{elif is_administrador(session.auth.user.id):}}
+                {{menu_administrador()}}
+            {{else:}}
+                {{menu_usuario()}}
+            {{pass}}
+        {{end}} <!-- fim do block navbar-index -->
+
+        {{block jumbotron}}
+            <div class="jumbotron imagem">
+                <div class="container">
+                		<p class="text-center">Bem-Vindo ao LabInstru</p>
+                </div>
+            </div>
+        {{end}} <!-- fim do block jumbotron -->
+
+        <div class="container conteudo">
+
+            {{block main}}
+                <div class="row index-paragrafo">
+                    <div class="col-md-4">
+                        <h2 class="text-success">Apresentação</h2>
+                        <p class="text-justify">
+                            O Laboratório de Instrumentação Meteorológica da EST/UEA, conhecido como LabInstru, foi criado para atender as demandas do curso de graduação de meteorologia. O LabInstru encontra-se equipado como diversos sensores meteorológicos, os quais são utilizados durante as aulas práticas da disciplina instrumentação meteorológica.
+                        </p>
+
+                        <figure class="foto-legenda">
+                            <img src="{{=URL('static','imagens',args='lab4.JPG')}}">
+                            <figcaption>
+                                <h5>aulas de campo no LabInstru</h5>
+                            </figcaption>
+                        </figure>
+                    </div><!--/.col-md-4 -->
+
+                    <div class="col-md-4">
+                        <h2 class="text-success">Atividades</h2>
+                        
+                        <ul class="lista-info">
+                            <li>
+                                Manter a estação meteorológica em funcionamento contínuo
+                            </li>
+                            <li>
+                                Organizar os dados coletados nas estações instaladas através do laboratório
+                            </li>
+                            <li>
+                                Suporte aos projetos de pesquisas no que diz respeito à estação de instrumentos meteorológicos
+                            </li>
+                        </ul>
+                        
+
+                        <figure class="foto-legenda">
+                            <img src="{{=URL('static','imagens',args='lab5.JPG')}}">
+                            <figcaption>
+                                <h5>Estação Meteorológica Automática</h5>
+                            </figcaption>
+                        </figure>
+                    </div><!--/.col-md-4-->
+
+                    <div class="col-md-4">
+                        <h2 class="text-success">Localização</h2>
+                        <p class="text-justify">
+                            <ul class="lista-info">
+                                <li>Laboratório de Instrumentação Meteorológica</li>
+                                <li>Sala C29</li>
+                                <li>Universidade do Estado do Amazonas - UEA</li>
+                                <li>Escola Superior de Tecnologia - EST</li>
+                                <li>Av. Darcy Vargas, 1200 Manaus, Amazonas</li>
+                            </ul>
+                        </p>
+
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.008045800548!2d-60.020003785900045!3d-3.092517141133872!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x926c1aa5a5540129%3A0x148088e86e2c44f7!2sEscola+Superior+de+Tecnologia+-+EST!5e0!3m2!1spt-BR!2sbr!4v1482944473664" width="350" height="324" frameborder="0" style="border:0" allowfullscreen>
+                        </iframe>
+                    </div><!--/.col-md-4-->
+                </div><!--/.row.index-paragrafo-->
+            {{end}} <!-- fim do block main -->
+            <div class="push"></div>
+        </div><!--/.container.conteudo-->
+
+        {{block footer}}
+            <div class="container footer">
+                <footer id="rodape" class="footer">
+                    <hr>
+                    <div class="col-sm-12 col-md-4 col-lg-4">
+                        <p>
+                            &copy; 2017 - por Pedro Ribeiro
+                        </p>
+                    </div>
+
+                    <div class="col-sm-12 col-md-4 col-lg-4">
+                    <!-- aqui entra um texto caso necessário -->
+                    </div>
+
+                    <div class="col-sm-12 col-md-4 col-lg-4">
+
+                        <a href="http://www.uea.edu.br" target="_blank">
+                            <img class="rede" src="{{=URL('static','imagens',args='twitter.png')}}">
+                        </a>
+
+                        <a href="http://www.uol.com.br" target="_blank">
+                            <img class="rede" src="{{=URL('static','imagens',args='facebook.png')}}">
+                        </a>
+
+                        <a href="http://www.uol.com.br" target="_blank">
+                            <img class="rede img-responsive img-thumbnail" width="80" src="{{=URL('static','imagens',args='labinstru-peq.png')}}">
+                        </a>
+
+                        <a href="http://www.uol.com.br" target="_blank">
+                            <img class="rede img-responsive img-thumbnail" width="90" src="{{=URL('static','imagens',args='logo-uea.png')}}">
+                        </a>
+                    </div>
+                </footer>
+            </div>
+        {{end}} <!-- fim do block footer -->
+
+        <!-- Bootstrap core JavaScript -->
+        <script src="{{=URL('static','js',args='jquery.min.js')}}"></script>
+        <script src="{{=URL('static','js',args='bootstrap.min.js')}}"></script>
+
+        <!-- meus scripts -->
+        <script src="{{=URL('static','js',args='scripts.js')}}"></script>
+        <script src="{{=URL('static','js',args='inserir.js')}}"></script>
+
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="{{=URL('static','js',args='ie10-viewport-bug-workaround.js')}}"></script>
+        <script src="{{=URL('static','js',args='offcanvas.js')}}"></script>
+    </body>
+</html>

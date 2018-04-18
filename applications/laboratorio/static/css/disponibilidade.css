@@ -1,0 +1,64 @@
+@charset "UTF-8";
+div#calendar-baixa1 {
+    width:  100%;
+    padding: 5px 2px;
+}
+
+div.cb-form {
+    margin: 10px 5px;
+    padding: 5px;
+}
+
+/** Lógica Calendário **/
+div.conteudo-calendario {
+    width:680px;
+    min-height:200px;
+    padding: 5px;
+    margin:10px auto 20px auto;
+    background-color: #ffffff;
+    box-shadow: inset 0 0 10px #777777;
+}
+
+div.conteudo-cal table {
+    width: 500px;
+    margin: 10px auto 10px auto;
+    /* empty-cells:hide; */ /* Não sei por que não funcionou */
+}
+
+div.conteudo-cal table th, td {
+    padding: 7px 10px 10px 10px;
+    text-align:center;
+}
+
+div.conteudo-cal table th {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 1.5em;
+    border-bottom: 2px solid #111111;
+    border-top: 1px solid #999;
+}
+
+div.conteudo-cal table tr {
+    font-size:1.125em;
+    font-weight: bold;
+}
+
+div.conteudo-cal table td.cal-completa:hover, td.cal-incompleta:hover, td.cal-vazia:hover{
+    background-color:#c3e6e5;
+}
+
+div.conteudo-cal table td.cal-completa {
+    color: green;
+}
+
+div.conteudo-cal table td.cal-incompleta {
+    color: orange;
+}
+
+div.conteudo-cal table td.cal-vazia {
+    color: red;
+}
+
+div.conteudo-cal table td.cal-inativa {
+    color:grey;
+}

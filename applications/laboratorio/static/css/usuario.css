@@ -1,0 +1,179 @@
+/***** inicio .form-label-user ****/
+form.form-usuario {
+  max-width: 600px;
+  padding: 15px;
+  margin: 10px auto;
+}
+
+.form-label-user {
+  display: inline-block;
+  font-size: 1.2em;
+  font-weight: bold;
+  width: 120px;
+}
+
+.form-input-user {
+	display: inline-block;
+	width: 180px;
+	border: 1px solid #CCC;
+	font-size: 1.2em;
+	padding: 2px 5px;
+}
+
+#form-editar-usuario .form-input-user {
+	width: 240px;
+}
+
+.form-label-estacao {
+  display: inline-block;
+  font-size: 1.2em;
+  width: 320px;
+}
+
+.form-input-estacao {
+	display: inline-block;
+	width: 400px;
+	border: 1px solid #CCC;
+	font-size: 1.2em;
+	padding: 3px 5px;
+}
+
+.btn-form-baixa1 {
+	margin-top: 5px;
+}
+
+.hint {
+	transition: opacity 0.7s, margin-left 1.2s;
+	background-color: #FFFBE4;
+	border-radius: 3px;
+	border: 1px solid #CCC;
+	box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+	display: inline-block;
+	font-size: 1.1em;
+	padding: 3px;
+	opacity: 0;
+	color: black;
+}
+
+input:focus + .hint{
+	margin-left: 20px;
+	opacity: 1;
+}
+
+div.error {
+  display: inline-block;
+  color: red;
+  font-size: 1.0em;
+  font-style: italic;
+  margin: 5px 0 0 10px;
+}
+
+.form-button-user{
+	background-color: #E5E5E5;
+	background-image: -webkit-linear-gradient(#FFF, #E5E5E5);
+	background-image: -o-linear-gradient(#FFF, #E5E5E5);
+	background-image: linear-gradient(#FFF, #E5E5E5);
+	border: 1px solid #AAA;
+	border-radius: 3px;
+	color: #000;
+	font-size: 1.1em;
+	font-weight: bold;
+	padding: 5px 10px;
+	margin-top: 10px;
+}
+
+.form-button-user:hover{
+	background-color: #285582;
+	background-image: -webkit-linear-gradient(#3775B3, #285582);
+	background-image: -o-linear-gradient(#3775B3, #285582);
+	background-image: linear-gradient(#3775B3, #285582);
+	border-color: #204569;
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 0 3px #3775B3;
+	color: #FFF;
+	text-shadow: -1px -1px 0 rgba(0,0,0,0.6);
+
+}
+
+.form-button-user:active{
+	background-color: #204569;
+	background-image: none;
+	border-color: #1A3754;
+	box-shadow: inset 0 2px 1px rgba(0,0,0, 0.15);
+}
+
+fieldset {
+	border:2px solid #CECECE;
+	margin: 20px 0px 0px 0px;
+	padding: 10px;       
+	position: relative;
+	border-radius:4px;
+	background-color:#FFF;
+	padding-left:10px;
+}	
+	
+legend{
+	font-size:1.3em;
+	color: black;
+	font-weight:bold;
+	margin-bottom: 0px; 
+	width: 34%; 
+	border: none;
+	padding: 2px 5px 2px 10px; 
+}
+
+fieldset#trocaSenha{
+	background: url("../imagens/cadeado.png") no-repeat 100% 46%;
+}
+
+fieldset#cadastraUsuario{
+	background: url("../imagens/usuario.png") no-repeat 98% 46%;
+}
+
+fieldset#inserirBaixa1{
+	background: url("../imagens/input.png") no-repeat 98% 46%;
+}
+
+fieldset#editaUsuario{
+	background: url("../imagens/edita-usuario.png") no-repeat 100% 96%;
+}
+
+fieldset#cb1-campos legend{
+	width: 26%;
+}
+
+fieldset#cb1-datas legend{
+	width: 21%;
+}
+
+input.btn-consulta {
+	margin-top: 10px;
+}
+
+/***** fim  .form-label-user *****/
+
+/* div#saudação */
+#saudacao {
+  display: inline-block;
+}
+
+h1.titulo {
+  text-align: center;
+}
+
+.form-consulta-campos{
+	margin: 10px 2px;
+}
+
+.form-consulta-campos label{
+	width: 11em;
+}
+
+
+
+.grow {
+	-webkit-transition: -moz-transform .3s ease-out; 
+   -moz-transition: -webkit-transform .3s ease-out; 
+   -o-transition: -o-transform .3s ease-out; 
+    transition: transform .3s ease-out; 
+}
+.grow:hover {transform: scale(1.3);}

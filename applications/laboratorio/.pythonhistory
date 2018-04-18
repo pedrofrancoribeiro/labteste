@@ -1,0 +1,119 @@
+db.table
+db.tables
+exit
+db.baixa1
+db.baixa1.insert(dia_hora="2014-01-01 6:00:00", record="1",tb4_tot="2.34")
+commit()
+db.commit()
+db.baixa1.insert(dia_hora="2014-01-01 6:00:00", record="1",tb4_tot="2.34")
+db.commit()
+db.baixa1.insert(dia_hora="2014-02-01 6:00:00", record="1",tb4_tot="2.34")
+db.commit()
+db.baixa1.insert(dia_hora="2014-03-01 6:00:00", record="1",tb4_tot="2.34")
+db.commit()
+db.baixa1.insert(dia_hora="2014-04-01 6:00:00", record="1",tb4_tot="2.34")
+db.commit()
+db.baixa1.insert(dia_hora="2014-05-01 6:00:00", record="1",tb4_tot="2.34")
+db.commit()
+db.baixa1.insert(dia_hora="2014-06-01 6:00:00", record="1",tb4_tot="2.34")
+db.commit()
+db.baixa1.insert(dia_hora="2014-07-01 6:00:00", record="1",tb4_tot="2.34")
+db.commit()
+db.baixa1.insert(dia_hora="2014-08-01 6:00:00", record="1",tb4_tot="2.34")
+db.commit()
+db.baixa1.insert(dia_hora="2014-09-01 6:00:00", record="1",tb4_tot="2.34")
+db.commit()
+db.baixa1.insert(dia_hora="2014-10-01 6:00:00", record="1",tb4_tot="2.34")
+db.commit()
+db.baixa1.insert(dia_hora="2015-11-01 6:00:00", record="1",tb4_tot="2.34")
+db.commit()
+db.baixa1.insert(dia_hora="2015-12-01 6:00:00", record="1",tb4_tot="2.34")
+db.commit()
+db.baixa1.insert(dia_hora="2016-1-1 6:00:00", record="1",tb4_tot="2.34")
+db.commit()
+db.baixa1.insert(dia_hora="2016-2-1 6:00:00", record="1",tb4_tot="2.34")
+db.commit()
+db.baixa1.insert(dia_hora="2016-3-1 6:00:00", record="1",tb4_tot="2.34")
+db.commit()
+print db.executesql('select dia_hora from baixa1;')
+db.executesql('select dia_hora from baixa1;')
+db.executesql('select dia_hora from baixa1 where dia_hora between '' and '';')
+db.executesql('select dia_hora from baixa1 where dia_hora between '2014-01-01 06:00:00' and '2014-08-01 06:00:00';')
+db.executesql('select dia_hora from baixa1 where dia_hora between 2014-01-01 06:00:00 and 2014-08-01 06:00:00;')
+db.executesql('select dia_hora from baixa1 where dia_hora between "2014-01-01 06:00:00" and "2014-08-01 06:00:00";')
+stringQuery = "select dia_hora from baixa1 where dia_hora between \"2014-01-01 06:00:00\" and \"2014-08-01 06:00:00\";"
+db.executesql(stringQuery)
+clear
+query = db.baixa1.dia_hora between "2014-01-01 06:00:00" & "2014-08-01 06:00:00"
+query = db.baixa1.dia_hora between 2014-01-01 06:00:00 & 2014-08-01 06:00:00
+query = db.baixa1.dia_hora = 2014-01-01 06:00:00 & 2014-08-01 06:00:00
+query = db.baixa1.dia_hora between 2014-01-01 06:00:00 & 2014-08-01 06:00:00
+query = db.baixa1.dia_hora between (2014-01-01 06:00:00 & 2014-08-01 06:00:00)
+query = db.baixa1.dia_hora in 2014-01-01 06:00:00 & 2014-08-01 06:00:00
+query = db.baixa1.dia_hora between \"2014-01-01 06:00:00\" & \"2014-08-01 06:00:00\'
+db(db.baixa1).select()
+baixa1 = db(db.baixa1).select()
+print db
+db.baixa1
+db.baixa1.fields
+db.baixa1.select()
+db(db.baixa1).select()
+baixa = db(db.baixa1).select()
+len(baixa)
+baixa.count()
+db(db.baixa1).count()
+baixa = db(db.baixa1).select(limitby=(1,3))
+len(baixa)
+baixa = db(db.baixa1).select(limitby=(1,6))
+len(baixa)
+db.tables
+db.auth_membership.group_id == 2
+query = db.auth_mebership.group_id == 2
+query = db.auth_membership.group_id == 2
+dbset = db(query)
+dbset.select()
+query1 = db.auth_membership.group_id == 2
+query2 = db.auht_membership.user_id == 80
+query2 = db.auth_membership.user_id == 80
+dbset = db(query1 & query2)
+dbset.select()
+usuario = dbset.select()
+print usuario
+print dbset.select()
+dbset.select()
+query2 = db.auth_membership.user_id == 88
+dbset.select()
+query1 = db.auth_membership.group_id == 2
+query2 = db.auth_membership.user_id == 8
+dbset = db(query1 & query2)
+dbset.select()
+db(query1 & query2).select()
+if (db(query1 & query2).select()):
+print "verdadeiro"
+if (db(query1 & query2).select()):
+    print "verdadeiro"
+query1 = db.auth_membership.group_id == 2
+query2 = db.auth_membership.user_id == 80
+if (db(query1 & query2).select()):
+    print "verdadeiro"
+valor = if(db(query1 & query2).select())
+valor = db(query1 & query2).select()
+print valor
+usuarios = db(db.auth_user).select()
+print usuarios
+print usuario.id[80]
+print usuario.id["80"]
+print usuarios.id["80"]
+print usuarios.id[80]
+for usuario in usuarios:
+    print usuario.id[80]
+for usuario in usuarios:
+    print usuario.id
+max = db.baixa1.dia_hora.min()
+print db().select(max).first()
+print db().select(max).first()[min]
+print db().select(max).first()[max]
+min = db.baixa1.dia_hora.min()
+print db().select(min).first()[min]
+max = db.baixa1.dia_hora.max()
+print db().select(max).first()[max]

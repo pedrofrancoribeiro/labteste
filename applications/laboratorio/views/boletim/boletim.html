@@ -1,0 +1,106 @@
+{{extend 'layoutindex.html'}}
+
+{{block head}}
+  {{include 'functions.html'}}
+  <!-- Contém alguns estilos gerais das páginas -->
+  <link rel="stylesheet" href="{{=URL('static','css',args='boletim.css')}}">
+  <script src="{{=URL('static','js',args='html2canvas.js')}}"></script>
+  <style type="text/css">
+	#img {
+        width:400px;
+        height:500px;
+        margin:0px auto;
+        border:2px solid red;
+        display: none;
+	}
+  </style>
+
+  <script type="text/javascript">
+	window.onload = function() {
+		document.getElementById("btnSaveJPG").onclick = function() {
+			var target = $('#div');
+			alert('chegou aqui!');
+			html2canvas(target, {
+    			onrendered: function(canvas) {
+					var img = canvas.toDataURL("image/jpeg");
+                    $('#div').css({display:"none"});
+                    document.getElementById("img").src = img;
+                    $('#img').css({display:"block"});
+    			}
+			});
+		}
+	}
+  </script>
+{{end}}
+
+{{block jumbotron}}
+{{end}}
+
+{{block main}}
+    <div class="row">
+        <div class="col-md-3 col-boletim">
+
+            <div class="conteiner-col-1 cor-de-fundo">
+
+                <header>
+                    <h3>ESCOLHA A DATA:</h3>
+                </header>
+
+                <section>
+                    <div class="">
+                        <form class="" action="#" method="post">
+                            <p>
+                                <label for="bol-dia">Dia</label>
+                                <input id="bol-dia" class="form-control" type="number" name="bol-dia" min="1" max="31" value="1" required autofocus>
+                            </p>
+
+                            <p>
+                                <label for="bol-mes">Mês</label>
+                                <select id="bol-mes" class="" name="bol-mes">
+                                    <option value="1">Janeiro</option>
+                                    <option value="2">Fevereiro</option>
+                                    <option value="3">Março</option>
+                                    <option value="4">Abril</option>
+                                    <option value="5">Maio</option>
+                                    <option value="6">Junho</option>
+                                    <option value="7">Julho</option>
+                                    <option value="8">Agosto</option>
+                                    <option value="9">Setembro</option>
+                                    <option value="10">Outubro</option>
+                                    <option value="11">Novembro</option>
+                                    <option value="12">Dezembro</option>
+                                </select>
+                            </p>
+
+                            <p>
+                                <label for="bol-ano">Ano</label>
+                                <input id="bol-ano" class="form-input-user form-control" type="number" name="bol-ano" min="2014" max="={{=ano}}" value="{{=ano}}" required>
+                            </p>
+
+                            <p>
+                                <button class="btn btn-primary">Gerar Boletim</button>
+                            </p>
+                        </form>
+                    </div> <!-- .cb1-form -->
+                </section>
+
+            </div><!-- conteiner-cal-boletim -->
+
+        </div><!-- col-md-3.col-boletim -->
+
+        <div class="col-md-6 col-boletim">
+            <div class="conteiner-col-2">
+                {{boletim()}}
+                <img src="no" id="img">
+                <button type="button" class="btn btn-primary rede" id="btnSaveJPG">Salvar</button>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-boletim">
+            <div class="conteiner-col-3">
+                <h1>Coluna3</h1>
+            </div>
+        </div> <!-- .col-md3 .col-boletim -->
+    </div>
+{{end}}
+

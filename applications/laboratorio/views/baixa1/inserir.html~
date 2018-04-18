@@ -1,0 +1,89 @@
+{{extend 'layoutindex.html'}}
+
+{{block head}}
+    <link href="{{=URL('static','css',args='modal-inserir.css')}}" rel="stylesheet">
+    <link href="{{=URL('static','css',args='animate.css')}}" rel="stylesheet">
+{{end}}
+
+{{block jumbotron}}
+{{end}}
+
+{{block main}}
+
+    <div class="container">
+        <!-- <div class="progress" id="div-progress">
+        <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 5%;" id="barra-progresso">
+        </div>
+        </div> -->
+
+        <form id="form-inserir-baixa1" class="col-md-6 col-md-offset-3 form-formulario" action="#" enctype="multipart/form-data" method="post">
+            <img src="{{=URL('static','imagens',args='labinstru.png')}}" alt="icone-labinstru" class="img-responsive center-block">
+
+            <fieldset id="inserirBaixa1" class="col-md-12">
+                <legend>Inserir Baixa 1</legend> 
+
+                <p>
+                  <div class="col-md-10">
+                      <input class="form-control" type="file" id="formInserirBaixa1" name="arquivo" required>
+                  </div>
+                </p>
+
+            </fieldset>
+
+            <input id="btn-inserir" class="btn btn-success btn-aux" type="submit" name="ENVIAR" value="Enviar">
+            <input class="btn btn-default btn-aux" type="reset" name="APAGAR" value="Limpar">
+
+            {{if mensagem:}}
+
+                <div id="msg-inserir-baixa1" class="{{=mensagemClass}}">
+                    {{=mensagem}}
+                    <button id="show-modal" class="close" data-dismiss="alert">&times;</button>
+                </div>
+
+                <div class="modal tema-modal primary animated bounce" id="modal1">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+
+                            <div class="modal-header">
+                                <h2 class="modal-title text-center">Informações Importantes</h2>
+                            </div>
+
+                                <div class="modal-body">
+                                    <p>
+                                        Total de linhas do arquivo: {{=resultado[0]}}
+                                    </p>
+                                    <p>
+                                        Tuplas inseridas: {{=resultado[1]}}
+                                    </p>
+                                    <p>
+                                        Tuplas não inseridas: {{=resultado[2]}}
+                                    </p>
+                                    <p>
+                                        Tuplas com menos de 26 campos: {{=resultado[4]}}
+                                    </p>
+                                    <p>
+                                        Tuplas com mais de 26 campos: {{=resultado[6]}}
+                                    </p>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+                                </div>
+                            </div> <!-- .modal-body -->
+                        </div><!-- .modal-content -->
+                    </div><!-- .modal-dialog -->
+                </div> <!-- .modal.fade -->
+
+            {{pass}}
+        </form>
+    </div> <!-- /.container -->
+
+  <script>
+    $(function(){
+        $("#show-modal").click(function(){
+          $("#modal1").modal({backdrop:'static',keyboard:false});
+        });
+        
+    });
+  </script>
+
+{{end}}

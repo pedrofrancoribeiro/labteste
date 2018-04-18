@@ -1,0 +1,229 @@
+{{extend 'layoutindex.html'}}
+
+{{block jumbotron}}
+{{end}}
+
+{{block main}}
+      <div class="container">
+      <div>
+        <form id="form-selecionar-baixa1" class="form-horizontal form-formulario" action="{{=URL('baixa1',function)}}" method="post">
+
+              <fieldset id="cb1-datas">
+                <legend>Datas para consulta</legend>
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                      <p>
+                        <label for="" class="form-label-user">Data inicial:</label>
+                        <input class="form-control datetime form-input-user" id="baixa1_dt_inicial" type="text" name="26" value placeholder="aaaa-mm-dd h:m:s"  />
+                        <label for="baixa1_dt_inicial"><i class="icon icon-user glyphicon glyphicon-calendar"></i> </label>
+                      </p>
+
+                      <p>
+                        <label for="" class="form-label-user">Data final:</label>
+                        <input class="form-control datetime form-input-user" id="baixa1_dt_final" type="text" name="27" value placeholder="aaaa-mm-dd h:m:s"/>
+                        <label for="baixa1_dt_final"><i class="icon icon-user glyphicon glyphicon-calendar"></i></label>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                
+              </fieldset>
+            
+
+              <fieldset id="cb1-campos">
+
+                <legend>Campos para a consulta</legend>
+
+                <input type="hidden" name="0" id="id_dia_hora" value="0"/>
+
+                <div class="container-fluid form-consulta-campos">
+                  <div class="row">
+                      <div class="col-md-10 col-md-offset-1">
+
+                      <label for="id_record" class="btn btn-default">
+                        <input class="campos-baixa1" type="checkbox" name="1" id="id_record" value="1"> record
+                      </label>
+
+                      <label for="id_batt_volt_min" class="btn btn-default">
+                        <input class="campos-baixa1" type="checkbox" name="2" id="id_batt_volt_min" value="2"> batt_volt_min
+                      </label>
+
+                      <label for="id_p_temp" class="btn btn-default">
+                        <input class="campos-baixa1" type="checkbox" name="3" id="id_p_temp" value="3"> p_temp
+                      </label>
+
+                      <label for="id_nr_lite_avg" class="btn btn-default">
+                        <input class="campos-baixa1" type="checkbox" name="4" id="id_nr_lite_avg" value="4"> nr_lite_avg
+                      </label>
+
+                      <label for="id_cm3_up_avg" class="btn btn-default">
+                        <input class="campos-baixa1" type="checkbox" name="5" id="id_cm3_up_avg" value="5"> cm3_up_avg
+                      </label>
+
+                    </div>
+                  </div>
+                </div>
+
+                <div class="container-fluid form-consulta-campos">
+                  <div class="row">
+                      <div class="col-md-10 col-md-offset-1">
+                        <label for="id_cm3_dn_avg" class="btn btn-default">
+                        <input class="campos-baixa1" type="checkbox" name="6" id="id_cm3_dn_avg" value="6"> cm3_dn_avg
+                      </label>
+
+                      <label for="id_cg3_up_corr_avg" class="btn btn-default">
+                        <input class="campos-baixa1" type="checkbox" name="7" id="id_cg3_up_corr_avg" value="7"> cg3_up_corr_avg
+                      </label>
+
+                      <label for="id_cg3_dn_corr_avg" class="btn btn-default">
+                        <input class="campos-baixa1" type="checkbox" name="8" id="id_cg3_dn_corr_avg" value="8"> cg3_dn_corr_avg
+                      </label>
+
+                      <label for="id_cnr1_tc_avg" class="btn btn-default">
+                        <input class="campos-baixa1" type="checkbox" name="9" id="id_cnr1_tc_avg" value="9"> cnr1_tc_avg
+                      </label>
+
+                      <label for="id_cma11_up_avg" class="btn btn-default">
+                        <input class="campos-baixa1" type="checkbox" name="10" id="id_cma11_up_avg" value="10"> cma11_up_avg
+                      </label>
+
+                      </div>
+                  </div>
+                </div>
+
+                <div class="container-fluid form-consulta-campos">
+                  <div class="row">
+                      <div class="col-md-10 col-md-offset-1">
+
+                        <label for="id_cma11_dn_avg" class="btn btn-default">
+                          <input class="campos-baixa1" type="checkbox" name="11" id="id_cma11_dn_avg" value="11"> cma11_dn_avg
+                        </label>
+
+                        <label for="id_li_190s_avg" class="btn btn-default">
+                          <input class="campos-baixa1" type="checkbox" name="12" id="id_li_190s_avg" value="12"> li_190s_avg
+                        </label>
+
+                        <label for="id_vw_avg" class="btn btn-default">
+                          <input class="campos-baixa1" type="checkbox" name="13" id="id_vw_avg" value="13"> vw_avg
+                        </label>
+
+                        <label for="id_hfp01_avg" class="btn btn-default">
+                          <input class="campos-baixa1" type="checkbox" name="14" id="id_hfp01_avg" value="14"> hfp01_avg
+                        </label>
+
+                        <label for="id_stp01_50cm_avg" class="btn btn-default">
+                          <input class="campos-baixa1" type="checkbox" name="15" id="id_stp01_50cm_avg" value="15"> stp01_50cm_avg
+                        </label>
+
+                      </div>
+                  </div>
+                </div>
+
+                 <div class="container-fluid form-consulta-campos">
+                  <div class="row">
+                      <div class="col-md-10 col-md-offset-1">
+
+                        <label for="id_stp01_20cm_avg" class="btn btn-default">
+                          <input class="campos-baixa1" type="checkbox" name="16" id="id_stp01_20cm_avg" value="16"> stp01_20cm_avg
+                        </label>
+
+                        <label for="id_stp01_10cm_avg" class="btn btn-default">
+                          <input class="campos-baixa1" type="checkbox" name="17" id="id_stp01_10cm_avg" value="17"> stp01_10cm_avg
+                        </label>
+
+                        <label for="id_stp01_05cm_avg" class="btn btn-default">
+                          <input class="campos-baixa1" type="checkbox" name="18" id="id_stp01_05cm_avg" value="18"> stp01_05cm_avg
+                        </label>
+
+                        <label for="id_stp01_02cm_avg" class="btn btn-default">
+                          <input class="campos-baixa1" type="checkbox" name="19" id="id_stp01_02cm_avg" value="19"> stp01_02cm_avg
+                        </label>
+                      
+                        <label for="id_cs106_avg" class="btn btn-default">
+                          <input class="campos-baixa1" type="checkbox" name="20" id="id_cs106_avg" value="20"> cs106_avg
+                        </label>
+
+                      </div>
+                  </div>
+                </div>
+
+                <div class="container-fluid form-consulta-campos">
+                  <div class="row">
+                      <div class="col-md-10 col-md-offset-1">
+
+                       <label for="id_hmp45c_temp_avg" class="btn btn-default">
+                          <input class="campos-baixa1" type="checkbox" name="21" id="id_hmp45c_temp_avg" value="21"> hmp45c_temp_avg
+                        </label>
+
+                        <label for="id_hmp45c_rh_avg" class="btn btn-default">
+                          <input class="campos-baixa1" type="checkbox" name="22" id="id_hmp45c_rh_avg" value="22"> hmp45c_rh_avg
+                        </label>
+
+                        <label for="id_wind_speed" class="btn btn-default">
+                          <input class="campos-baixa1" type="checkbox" name="23" id="id_wind_speed" value="23"> wind_speed
+                        </label>
+
+                        <label for="id_win_direction" class="btn btn-default" >
+                          <input class="campos-baixa1" type="checkbox" name="24" id="id_win_direction" value="24"> win_direction
+                        </label>
+
+                        <label for="id_tb4_tot" class="btn btn-default">
+                          <input class="campos-baixa1" type="checkbox" name="25" id="id_tb4_tot" value="25"> tb4_tot
+                        </label>
+                      
+                      </div>
+
+                      <div class="container-fluid form-consulta-campos">
+                        <div class="row">
+                          <div class="col-md-10 col-md-offset-1">
+                            <input id="checked-all" type="checkbox"/><label for="checked-all">Todos</label>
+                          </div>
+                        </div>
+                      </div>
+                      
+                  </div>
+                </div>
+                
+            </fieldset>
+            <div class="container">
+                <input type="submit" class="btn btn-success btn-aux" value="Enviar">
+                <input id="btn-limpar-baixa1" type="reset" class="btn btn-default btn-aux" value="Limpar">
+  
+            </div>
+        </form>
+      </div> <!-- .col-md-8 -->
+      </div>
+      <script>
+        $(document).ready(function(){
+
+            $('#checked-all').change(function(){
+              var val = this.checked;
+              $(':checkbox[class=campos-baixa1]').each(function(){
+                $(this).prop('checked',val);
+                if(val == true){
+                  $(this).parent().addClass('btn-campos-selecionados');
+                }else{
+                  $(this).parent().removeClass('btn-campos-selecionados');
+                }
+              });
+            });
+
+            $('.campos-baixa1').on('change', function(){
+              if( this.checked == true){
+                $(this).parent().addClass('btn-campos-selecionados');
+              }else{
+                $(this).parent().removeClass('btn-campos-selecionados');
+              }
+            });
+
+            $('#btn-limpar-baixa1').on('click', function(){
+              $(':checkbox[class=campos-baixa1]').each(function(){
+                  $(this).parent().removeClass('btn-campos-selecionados');
+              });
+            });
+
+        });
+      </script>
+      
+{{end}}

@@ -1,0 +1,39 @@
+{{extend 'layoutindex.html'}}
+
+{{block jumbotron}}
+{{end}}
+
+{{block row}}
+
+  <div class="container container-login">
+	
+	  <form  class="form-usuario" action="{{=URL('home','update_user')}}" enctype="multipart/form-data" method="post">
+	        <fieldset id="editaUsuario" class="col-md-12">
+	          <legend>Usuário : {{=usuario[0].first_name}} {{=usuario[0].last_name}}</legend>
+	          <input type="hidden" name="id" value="{{=usuario[0].id}}"/>
+	          <p>
+	            <label class="form-label-user" for="nomeUsuario">Nome</label>
+	            <input class="form-input-user" type="text" id="nomeUsuario" name="first_name" value="{{=usuario[0].first_name}}" required>
+	          
+	          </p>
+
+	          <p>
+	            <label class="form-label-user" for="sobrenomeUsuario">Sobrenome</label>
+	            <input class="form-input-user" type="text" id="sobrenomeUsuario" name="last_name"
+	            	value="{{=usuario[0].last_name}}" required>
+	           
+	          </p>
+
+	          <p>
+	            <label class="form-label-user" for="emailUsuario">E-mail</label>
+	            <input class="form-input-user" type="text" id="emailUsuario" name="email" value="{{=usuario[0].email}}" required>
+	            
+	          </p>
+
+	        </fieldset>
+	        <button class="form-button-user">Editar Usuário</button>
+	  </form>
+
+  </div> <!-- /container -->
+
+{{end}}

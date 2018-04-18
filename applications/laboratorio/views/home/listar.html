@@ -1,0 +1,36 @@
+{{extend 'layoutindex.html'}}
+
+{{block jumbotron}}
+{{end}}
+
+{{block main}}
+	<div class="container">
+		<div class="col-md-8 col-md-offset-2">
+
+			<h4 class="text-success text-right">Total de usuários: {{=count_user}}</h4>
+			<div class="panel panel-success panel-usuarios">
+				<div class="panel-heading panel-head-padrao">
+					<h2 class="text-center">Lista de usuários</h2>
+				</div>
+
+				<div class="panel-body">
+					<div class="table-responsive">
+						{{=table_users}}
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		
+	</div> <!-- /container -->
+
+	<script>
+		$(document).ready(function(){
+			$(".removebutton").click(function(){
+				if (!confirm("Deseja excluir o usuário?")){
+					return false;
+				}
+			});
+		});
+	</script>
+{{end}}

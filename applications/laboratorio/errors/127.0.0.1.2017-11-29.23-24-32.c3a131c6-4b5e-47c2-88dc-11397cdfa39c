@@ -1,0 +1,21 @@
+(dp1
+S'output'
+p2
+S'<type \'exceptions.RuntimeError\'> Failure to connect, tried 5 times:\nTraceback (most recent call last):\n  File "/Users/elloa/Dropbox/git/pedro-tcc/APP_WEB/web2py_lab/gluon/packages/dal/pydal/base.py", line 446, in __init__\n    self._adapter = ADAPTERS[self._dbname](**kwargs)\n  File "/Users/elloa/Dropbox/git/pedro-tcc/APP_WEB/web2py_lab/gluon/packages/dal/pydal/adapters/base.py", line 60, in __call__\n    obj = super(AdapterMeta, cls).__call__(*args, **kwargs)\n  File "/Users/elloa/Dropbox/git/pedro-tcc/APP_WEB/web2py_lab/gluon/packages/dal/pydal/adapters/mysql.py", line 132, in __init__\n    if do_connect: self.reconnect()\n  File "/Users/elloa/Dropbox/git/pedro-tcc/APP_WEB/web2py_lab/gluon/packages/dal/pydal/connection.py", line 125, in reconnect\n    self.connection = f()\n  File "/Users/elloa/Dropbox/git/pedro-tcc/APP_WEB/web2py_lab/gluon/packages/dal/pydal/adapters/mysql.py", line 130, in connector\n    return self.driver.connect(**driver_args)\n  File "/Users/elloa/Dropbox/git/pedro-tcc/APP_WEB/web2py_lab/gluon/contrib/pymysql/__init__.py", line 93, in Connect\n    return Connection(*args, **kwargs)\n  File "/Users/elloa/Dropbox/git/pedro-tcc/APP_WEB/web2py_lab/gluon/contrib/pymysql/connections.py", line 575, in __init__\n    self._connect()\n  File "/Users/elloa/Dropbox/git/pedro-tcc/APP_WEB/web2py_lab/gluon/contrib/pymysql/connections.py", line 743, in _connect\n    raise OperationalError(2003, "Can\'t connect to MySQL server on %r (%s)" % (self.host, e.args[0]))\nOperationalError: (2003, "Can\'t connect to MySQL server on \'localhost\' (61)")\n'
+p3
+sS'layer'
+p4
+S'/Users/elloa/Dropbox/git/pedro-tcc/APP_WEB/web2py_lab/applications/laboratorio/models/database.py'
+p5
+sS'code'
+p6
+S'#coding: utf-8\n#conectar ao banco de dados\n#setar op\xc3\xa7\xc3\xb5es de DAL\n\n#cria\xc3\xa7\xc3\xa3o do nosso objeto de banco de dados\ndb = DAL(**config.db)'
+p7
+sS'snapshot'
+p8
+(dp9
+sS'traceback'
+p10
+S'Traceback (most recent call last):\n  File "/Users/elloa/Dropbox/git/pedro-tcc/APP_WEB/web2py_lab/gluon/restricted.py", line 227, in restricted\n    exec ccode in environment\n  File "/Users/elloa/Dropbox/git/pedro-tcc/APP_WEB/web2py_lab/applications/laboratorio/models/database.py", line 6, in <module>\n    db = DAL(**config.db)\n  File "/Users/elloa/Dropbox/git/pedro-tcc/APP_WEB/web2py_lab/gluon/packages/dal/pydal/base.py", line 174, in __call__\n    obj = super(MetaDAL, cls).__call__(*args, **kwargs)\n  File "/Users/elloa/Dropbox/git/pedro-tcc/APP_WEB/web2py_lab/gluon/packages/dal/pydal/base.py", line 473, in __init__\n    "Failure to connect, tried %d times:\\n%s" % (attempts, tb)\nRuntimeError: Failure to connect, tried 5 times:\nTraceback (most recent call last):\n  File "/Users/elloa/Dropbox/git/pedro-tcc/APP_WEB/web2py_lab/gluon/packages/dal/pydal/base.py", line 446, in __init__\n    self._adapter = ADAPTERS[self._dbname](**kwargs)\n  File "/Users/elloa/Dropbox/git/pedro-tcc/APP_WEB/web2py_lab/gluon/packages/dal/pydal/adapters/base.py", line 60, in __call__\n    obj = super(AdapterMeta, cls).__call__(*args, **kwargs)\n  File "/Users/elloa/Dropbox/git/pedro-tcc/APP_WEB/web2py_lab/gluon/packages/dal/pydal/adapters/mysql.py", line 132, in __init__\n    if do_connect: self.reconnect()\n  File "/Users/elloa/Dropbox/git/pedro-tcc/APP_WEB/web2py_lab/gluon/packages/dal/pydal/connection.py", line 125, in reconnect\n    self.connection = f()\n  File "/Users/elloa/Dropbox/git/pedro-tcc/APP_WEB/web2py_lab/gluon/packages/dal/pydal/adapters/mysql.py", line 130, in connector\n    return self.driver.connect(**driver_args)\n  File "/Users/elloa/Dropbox/git/pedro-tcc/APP_WEB/web2py_lab/gluon/contrib/pymysql/__init__.py", line 93, in Connect\n    return Connection(*args, **kwargs)\n  File "/Users/elloa/Dropbox/git/pedro-tcc/APP_WEB/web2py_lab/gluon/contrib/pymysql/connections.py", line 575, in __init__\n    self._connect()\n  File "/Users/elloa/Dropbox/git/pedro-tcc/APP_WEB/web2py_lab/gluon/contrib/pymysql/connections.py", line 743, in _connect\n    raise OperationalError(2003, "Can\'t connect to MySQL server on %r (%s)" % (self.host, e.args[0]))\nOperationalError: (2003, "Can\'t connect to MySQL server on \'localhost\' (61)")\n\n'
+p11
+s.
